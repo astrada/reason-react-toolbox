@@ -1,0 +1,8 @@
+*.swp
+
+/lib/bs
+/lib/ocaml
+/node_modules
+.merlin
+npm-debug.log
+yarn.lock
