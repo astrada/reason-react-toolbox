@@ -18,14 +18,6 @@ let optionMap fn option =>
   | None => None
   };
 
-module ThemeProvider = {
-  type theme;
-  external themeProvider : ReasonReact.reactClass =
-    "ThemeProvider" [@@bs.module "react-css-themr/lib/index"];
-  let make theme::(theme: theme) children =>
-    ReasonReact.wrapJsForReason reactClass::themeProvider props::{"theme": theme} children;
-};
-
 module IconMenu = {
   module Position = {
     type t =
@@ -44,8 +36,7 @@ module IconMenu = {
       | BottomLeft => "bottomLeft"
       | BottomRight => "bottomRight";
   };
-  external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/menu/IconMenu"];
+  external reactClass : ReasonReact.reactClass = "default" [@@bs.module "react-toolbox/lib/menu"];
   let make
       theme::(theme: option (Js.t {..}))=?
       style::(style: option ReactDOMRe.style)=?
@@ -124,8 +115,7 @@ module IconMenu = {
 };
 
 module ListItemText = {
-  external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/list/ListItemText"];
+  external reactClass : ReasonReact.reactClass = "default" [@@bs.module "react-toolbox/lib/list"];
   let make
       theme::(theme: option (Js.t {..}))=?
       style::(style: option ReactDOMRe.style)=?
@@ -189,7 +179,7 @@ module ListItemText = {
 
 module Overlay = {
   external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/overlay/Overlay"];
+    "default" [@@bs.module "react-toolbox/lib/overlay"];
   let make
       theme::(theme: option (Js.t {..}))=?
       onEscKeyDown::(onEscKeyDown: option (ReactEventRe.Keyboard.t => unit))=?
@@ -224,7 +214,7 @@ module Snackbar = {
       | Warning => "warning";
   };
   external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/snackbar/Snackbar"];
+    "default" [@@bs.module "react-toolbox/lib/snackbar"];
   let make
       _type::(_type: option Type.t)=?
       timeout::(timeout: option float)=?
@@ -306,8 +296,7 @@ module ListItemActions = {
       | Left => "left"
       | Right => "right";
   };
-  external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/list/ListItemActions"];
+  external reactClass : ReasonReact.reactClass = "default" [@@bs.module "react-toolbox/lib/list"];
   let make _type::(_type: option Type.t)=? theme::(theme: option (Js.t {..}))=? children =>
     ReasonReact.wrapJsForReason
       ::reactClass
@@ -371,7 +360,7 @@ module DatePicker = {
       | Zh_tw => "zh-tw";
   };
   external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/date_picker/DatePicker"];
+    "default" [@@bs.module "react-toolbox/lib/date_picker"];
   let make
       value::(value: option [ | `Float float | `String string])=?
       theme::(theme: option (Js.t {..}))=?
@@ -488,8 +477,7 @@ module DatePicker = {
 };
 
 module TableHead = {
-  external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/table/TableHead"];
+  external reactClass : ReasonReact.reactClass = "default" [@@bs.module "react-toolbox/lib/table"];
   let make
       theme::(theme: option (Js.t {..}))=?
       style::(style: option ReactDOMRe.style)=?
@@ -573,8 +561,7 @@ module ListItemContent = {
       | Normal => "normal"
       | Large => "large";
   };
-  external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/list/ListItemContent"];
+  external reactClass : ReasonReact.reactClass = "default" [@@bs.module "react-toolbox/lib/list"];
   let make
       _type::(_type: option Type.t)=?
       theme::(theme: option (Js.t {..}))=?
@@ -593,8 +580,7 @@ module ListItemContent = {
 };
 
 module RadioButton = {
-  external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/radio/RadioButton"];
+  external reactClass : ReasonReact.reactClass = "default" [@@bs.module "react-toolbox/lib/radio"];
   let make
       value::(value: option (Js.t {..}))=?
       theme::(theme: option (Js.t {..}))=?
@@ -671,8 +657,7 @@ module RadioButton = {
 };
 
 module List = {
-  external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/list/List"];
+  external reactClass : ReasonReact.reactClass = "default" [@@bs.module "react-toolbox/lib/list"];
   let make
       theme::(theme: option (Js.t {..}))=?
       style::(style: option ReactDOMRe.style)=?
@@ -737,8 +722,7 @@ module List = {
 };
 
 module Chip = {
-  external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/chip/Chip"];
+  external reactClass : ReasonReact.reactClass = "default" [@@bs.module "react-toolbox/lib/chip"];
   let make
       theme::(theme: option (Js.t {..}))=?
       style::(style: option ReactDOMRe.style)=?
@@ -804,7 +788,7 @@ module Chip = {
 
 module BrowseButton = {
   external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/button/BrowseButton"];
+    "default" [@@bs.module "react-toolbox/lib/button"];
   let make
       _type::(_type: option string)=?
       theme::(theme: option (Js.t {..}))=?
@@ -894,7 +878,7 @@ module BrowseButton = {
 
 module IconButton = {
   external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/button/IconButton"];
+    "default" [@@bs.module "react-toolbox/lib/button"];
   let make
       _type::(_type: option string)=?
       theme::(theme: option (Js.t {..}))=?
@@ -983,7 +967,7 @@ module Navigation = {
       | Horizontal => "horizontal";
   };
   external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/navigation/Navigation"];
+    "default" [@@bs.module "react-toolbox/lib/navigation"];
   let make
       _type::(_type: option Type.t)=?
       theme::(theme: option (Js.t {..}))=?
@@ -1051,7 +1035,7 @@ module Navigation = {
 
 module Switch = {
   external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/switch/Switch"];
+    "default" [@@bs.module "react-toolbox/lib/switch"];
   let make
       theme::(theme: option (Js.t {..}))=?
       style::(style: option ReactDOMRe.style)=?
@@ -1126,8 +1110,7 @@ module Switch = {
 };
 
 module ListSubHeader = {
-  external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/list/ListSubHeader"];
+  external reactClass : ReasonReact.reactClass = "default" [@@bs.module "react-toolbox/lib/list"];
   let make
       theme::(theme: option (Js.t {..}))=?
       style::(style: option ReactDOMRe.style)=?
@@ -1191,7 +1174,7 @@ module ListSubHeader = {
 
 module Avatar = {
   external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/avatar/Avatar"];
+    "default" [@@bs.module "react-toolbox/lib/avatar"];
   let make
       title::(title: option string)=?
       theme::(theme: option (Js.t {..}))=?
@@ -1260,8 +1243,7 @@ module Avatar = {
 };
 
 module ListCheckbox = {
-  external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/list/ListCheckbox"];
+  external reactClass : ReasonReact.reactClass = "default" [@@bs.module "react-toolbox/lib/list"];
   let make
       theme::(theme: option (Js.t {..}))=?
       style::(style: option ReactDOMRe.style)=?
@@ -1338,8 +1320,7 @@ module ListCheckbox = {
 };
 
 module MenuDivider = {
-  external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/menu/MenuDivider"];
+  external reactClass : ReasonReact.reactClass = "default" [@@bs.module "react-toolbox/lib/menu"];
   let make
       theme::(theme: option (Js.t {..}))=?
       style::(style: option ReactDOMRe.style)=?
@@ -1400,8 +1381,7 @@ module MenuDivider = {
 };
 
 module TableRow = {
-  external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/table/TableRow"];
+  external reactClass : ReasonReact.reactClass = "default" [@@bs.module "react-toolbox/lib/table"];
   let make
       theme::(theme: option (Js.t {..}))=?
       style::(style: option ReactDOMRe.style)=?
@@ -1470,8 +1450,7 @@ module TableRow = {
 };
 
 module CardTitle = {
-  external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/card/CardTitle"];
+  external reactClass : ReasonReact.reactClass = "default" [@@bs.module "react-toolbox/lib/card"];
   let make
       title::(title: option ReasonReact.reactElement)=?
       theme::(theme: option (Js.t {..}))=?
@@ -1607,7 +1586,7 @@ module RadioGroup = {
 
 module Button = {
   external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/button/Button"];
+    "default" [@@bs.module "react-toolbox/lib/button"];
   let make
       _type::(_type: option string)=?
       theme::(theme: option (Js.t {..}))=?
@@ -1696,8 +1675,7 @@ module Button = {
 };
 
 module CardText = {
-  external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/card/CardText"];
+  external reactClass : ReasonReact.reactClass = "default" [@@bs.module "react-toolbox/lib/card"];
   let make
       theme::(theme: option (Js.t {..}))=?
       style::(style: option ReactDOMRe.style)=?
@@ -1758,8 +1736,7 @@ module CardText = {
 };
 
 module Card = {
-  external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/card/Card"];
+  external reactClass : ReasonReact.reactClass = "default" [@@bs.module "react-toolbox/lib/card"];
   let make
       theme::(theme: option (Js.t {..}))=?
       style::(style: option ReactDOMRe.style)=?
@@ -1823,7 +1800,7 @@ module Card = {
 
 module AppBar = {
   external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/app_bar/AppBar"];
+    "default" [@@bs.module "react-toolbox/lib/app_bar"];
   let make
       title::(title: option string)=?
       theme::(theme: option (Js.t {..}))=?
@@ -1936,7 +1913,7 @@ module Autocomplete = {
       | Down => "down";
   };
   external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/autocomplete/Autocomplete"];
+    "default" [@@bs.module "react-toolbox/lib/autocomplete"];
   let make
       value::(value: option (Js.t {..}))=?
       _type::(_type: option string)=?
@@ -2082,8 +2059,7 @@ module TableCell = {
       | Asc => "asc"
       | Desc => "desc";
   };
-  external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/table/TableCell"];
+  external reactClass : ReasonReact.reactClass = "default" [@@bs.module "react-toolbox/lib/table"];
   let make
       theme::(theme: option (Js.t {..}))=?
       tagName::(tagName: option TagName.t)=?
@@ -2171,8 +2147,7 @@ module Menu = {
       | BottomLeft => "bottomLeft"
       | BottomRight => "bottomRight";
   };
-  external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/menu/Menu"];
+  external reactClass : ReasonReact.reactClass = "default" [@@bs.module "react-toolbox/lib/menu"];
   let make
       theme::(theme: option (Js.t {..}))=?
       style::(style: option ReactDOMRe.style)=?
@@ -2251,8 +2226,7 @@ module Menu = {
 };
 
 module CardActions = {
-  external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/card/CardActions"];
+  external reactClass : ReasonReact.reactClass = "default" [@@bs.module "react-toolbox/lib/card"];
   let make
       theme::(theme: option (Js.t {..}))=?
       style::(style: option ReactDOMRe.style)=?
@@ -2313,8 +2287,7 @@ module CardActions = {
 };
 
 module MenuItem = {
-  external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/menu/MenuItem"];
+  external reactClass : ReasonReact.reactClass = "default" [@@bs.module "react-toolbox/lib/menu"];
   let make
       theme::(theme: option (Js.t {..}))=?
       style::(style: option ReactDOMRe.style)=?
@@ -2385,8 +2358,7 @@ module MenuItem = {
 };
 
 module ListItemLayout = {
-  external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/list/ListItemLayout"];
+  external reactClass : ReasonReact.reactClass = "default" [@@bs.module "react-toolbox/lib/list"];
   let make
       _to::(_to: option string)=?
       theme::(theme: option (Js.t {..}))=?
@@ -2469,8 +2441,7 @@ module ListItemLayout = {
 };
 
 module Link = {
-  external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/link/Link"];
+  external reactClass : ReasonReact.reactClass = "default" [@@bs.module "react-toolbox/lib/link"];
   let make
       theme::(theme: option (Js.t {..}))=?
       style::(style: option ReactDOMRe.style)=?
@@ -2541,8 +2512,7 @@ module Link = {
 };
 
 module ListDivider = {
-  external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/list/ListDivider"];
+  external reactClass : ReasonReact.reactClass = "default" [@@bs.module "react-toolbox/lib/list"];
   let make
       theme::(theme: option (Js.t {..}))=?
       style::(style: option ReactDOMRe.style)=?
@@ -2678,8 +2648,7 @@ module Tabs = {
       | Display => "display"
       | Unmounted => "unmounted";
   };
-  external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/tabs/Tabs"];
+  external reactClass : ReasonReact.reactClass = "default" [@@bs.module "react-toolbox/lib/tabs"];
   let make
       theme::(theme: option (Js.t {..}))=?
       style::(style: option ReactDOMRe.style)=?
@@ -2755,8 +2724,7 @@ module Tabs = {
 };
 
 module Table = {
-  external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/table/Table"];
+  external reactClass : ReasonReact.reactClass = "default" [@@bs.module "react-toolbox/lib/table"];
   let make
       theme::(theme: option (Js.t {..}))=?
       style::(style: option ReactDOMRe.style)=?
@@ -2825,7 +2793,7 @@ module Table = {
 
 module Panel = {
   external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/layout/Panel"];
+    "default" [@@bs.module "react-toolbox/lib/layout"];
   let make
       theme::(theme: option (Js.t {..}))=?
       style::(style: option ReactDOMRe.style)=?
@@ -2907,7 +2875,7 @@ module ProgressBar = {
       | Indeterminate => "indeterminate";
   };
   external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/progress_bar/ProgressBar"];
+    "default" [@@bs.module "react-toolbox/lib/progress_bar"];
   let make
       value::(value: option float)=?
       _type::(_type: option Type.t)=?
@@ -2993,8 +2961,7 @@ module CardMedia = {
       | Wide => "wide"
       | Square => "square";
   };
-  external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/card/CardMedia"];
+  external reactClass : ReasonReact.reactClass = "default" [@@bs.module "react-toolbox/lib/card"];
   let make
       theme::(theme: option (Js.t {..}))=?
       style::(style: option ReactDOMRe.style)=?
@@ -3065,7 +3032,7 @@ module CardMedia = {
 
 module Checkbox = {
   external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/checkbox/Checkbox"];
+    "default" [@@bs.module "react-toolbox/lib/checkbox"];
   let make
       theme::(theme: option (Js.t {..}))=?
       style::(style: option ReactDOMRe.style)=?
@@ -3148,7 +3115,7 @@ module Drawer = {
       | Right => "right";
   };
   external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/drawer/Drawer"];
+    "default" [@@bs.module "react-toolbox/lib/drawer"];
   let make
       withOverlay::(withOverlay: option bool)=?
       _type::(_type: option Type.t)=?
@@ -3219,8 +3186,7 @@ module Drawer = {
 };
 
 module Tab = {
-  external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/tabs/Tab"];
+  external reactClass : ReasonReact.reactClass = "default" [@@bs.module "react-toolbox/lib/tabs"];
   let make
       theme::(theme: option (Js.t {..}))=?
       style::(style: option ReactDOMRe.style)=?
@@ -3295,8 +3261,7 @@ module Tab = {
 };
 
 module Input = {
-  external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/input/Input"];
+  external reactClass : ReasonReact.reactClass = "default" [@@bs.module "react-toolbox/lib/input"];
   let make
       value::(value: option (Js.t {..}))=?
       _type::(_type: option string)=?
@@ -3396,7 +3361,7 @@ module Input = {
 
 module Layout = {
   external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/layout/Layout"];
+    "default" [@@bs.module "react-toolbox/lib/layout"];
   let make
       theme::(theme: option (Js.t {..}))=?
       style::(style: option ReactDOMRe.style)=?
@@ -3467,7 +3432,7 @@ module TimePicker = {
       | Ampm => "ampm";
   };
   external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/time_picker/TimePicker"];
+    "default" [@@bs.module "react-toolbox/lib/time_picker"];
   let make
       value::(value: option float)=?
       theme::(theme: option (Js.t {..}))=?
@@ -3512,8 +3477,7 @@ module TimePicker = {
 };
 
 module TabContent = {
-  external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/tabs/TabContent"];
+  external reactClass : ReasonReact.reactClass = "default" [@@bs.module "react-toolbox/lib/tabs"];
   let make
       theme::(theme: option (Js.t {..}))=?
       tabIndex::(tabIndex: option float)=?
@@ -3641,7 +3605,7 @@ module FontIcon = {
 
 module Slider = {
   external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/slider/Slider"];
+    "default" [@@bs.module "react-toolbox/lib/slider"];
   let make
       value::(value: option float)=?
       theme::(theme: option (Js.t {..}))=?
@@ -3725,7 +3689,7 @@ module Slider = {
 
 module Dropdown = {
   external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/dropdown/Dropdown"];
+    "default" [@@bs.module "react-toolbox/lib/dropdown"];
   let make
       value::(value: option [ | `String string | `Float float])=?
       theme::(theme: option (Js.t {..}))=?
@@ -3824,7 +3788,7 @@ module Dialog = {
       | Large => "large";
   };
   external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/dialog/Dialog"];
+    "default" [@@bs.module "react-toolbox/lib/dialog"];
   let make
       _type::(_type: option [ | `Enum Type.t | `String string])=?
       title::(title: option string)=?
@@ -3912,8 +3876,7 @@ module Dialog = {
 };
 
 module ListItemAction = {
-  external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/list/ListItemAction"];
+  external reactClass : ReasonReact.reactClass = "default" [@@bs.module "react-toolbox/lib/list"];
   let make
       theme::(theme: option (Js.t {..}))=?
       action::(action: option ReasonReact.reactElement)=?
@@ -3959,7 +3922,7 @@ module NavDrawer = {
       | Xxxl => "xxxl";
   };
   external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/layout/NavDrawer"];
+    "default" [@@bs.module "react-toolbox/lib/layout"];
   let make
       withOverlay::(withOverlay: option bool)=?
       _type::(_type: option Type.t)=?
@@ -4067,7 +4030,7 @@ module Sidebar = {
       | Xxxl => "xxxl";
   };
   external reactClass : ReasonReact.reactClass =
-    "default" [@@bs.module "react-toolbox/lib/layout/Sidebar"];
+    "default" [@@bs.module "react-toolbox/lib/layout"];
   let make
       withOverlay::(withOverlay: option bool)=?
       width::(width: option float)=?
