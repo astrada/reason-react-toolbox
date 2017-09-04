@@ -7,6 +7,7 @@ let unwrapValue =
   | `String s => toJsUnsafe s
   | `Bool b => toJsUnsafe (Js.Boolean.to_js_boolean b)
   | `Float f => toJsUnsafe f
+  | `Date d => toJsUnsafe d
   | `Callback c => toJsUnsafe c
   | `Element e => toJsUnsafe e
   | `Object o => toJsUnsafe o
@@ -362,7 +363,7 @@ module DatePicker = {
   external reactClass : ReasonReact.reactClass =
     "default" [@@bs.module "react-toolbox/lib/date_picker"];
   let make
-      value::(value: option [ | `Float float | `String string])=?
+      value::(value: option [ | `Date Js.Date.t | `String string])=?
       theme::(theme: option (Js.t {..}))=?
       sundayFirstDayOfWeek::(sundayFirstDayOfWeek: option bool)=?
       style::(style: option ReactDOMRe.style)=?
@@ -396,16 +397,16 @@ module DatePicker = {
       onChange::(onChange: option (ReactEventRe.Form.t => unit))=?
       okLabel::(okLabel: option string)=?
       name::(name: option string)=?
-      minDate::(minDate: option float)=?
-      maxDate::(maxDate: option float)=?
+      minDate::(minDate: option Js.Date.t)=?
+      maxDate::(maxDate: option Js.Date.t)=?
       locale::(locale: option [ | `Enum Locale.t | `Object (Js.t {..})])=?
       label::(label: option string)=?
       inputFormat::(inputFormat: option (Js.t {..}))=?
       inputClassName::(inputClassName: option string)=?
       icon::(icon: option ReasonReact.reactElement)=?
       error::(error: option string)=?
-      enabledDates::(enabledDates: option (array float))=?
-      disabledDates::(disabledDates: option (array float))=?
+      enabledDates::(enabledDates: option (array Js.Date.t))=?
+      disabledDates::(disabledDates: option (array Js.Date.t))=?
       className::(className: option string)=?
       cancelLabel::(cancelLabel: option string)=?
       autoOk::(autoOk: option bool)=?
@@ -449,8 +450,8 @@ module DatePicker = {
         "onChange": Js.Null_undefined.from_opt onChange,
         "okLabel": Js.Null_undefined.from_opt okLabel,
         "name": Js.Null_undefined.from_opt name,
-        "minDate": Js.Null_undefined.from_opt (optionMap Js.Date.fromFloat minDate),
-        "maxDate": Js.Null_undefined.from_opt (optionMap Js.Date.fromFloat maxDate),
+        "minDate": Js.Null_undefined.from_opt minDate,
+        "maxDate": Js.Null_undefined.from_opt maxDate,
         "locale":
           Js.Null_undefined.from_opt (
             optionMap
@@ -3434,7 +3435,7 @@ module TimePicker = {
   external reactClass : ReasonReact.reactClass =
     "default" [@@bs.module "react-toolbox/lib/time_picker"];
   let make
-      value::(value: option float)=?
+      value::(value: option Js.Date.t)=?
       theme::(theme: option (Js.t {..}))=?
       readonly::(readonly: option bool)=?
       onOverlayClick::(onOverlayClick: option (ReactEventRe.Mouse.t => unit))=?
@@ -3455,7 +3456,7 @@ module TimePicker = {
     ReasonReact.wrapJsForReason
       ::reactClass
       props::{
-        "value": Js.Null_undefined.from_opt (optionMap Js.Date.fromFloat value),
+        "value": Js.Null_undefined.from_opt value,
         "theme": Js.Null_undefined.from_opt theme,
         "readonly": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean readonly),
         "onOverlayClick": Js.Null_undefined.from_opt onOverlayClick,

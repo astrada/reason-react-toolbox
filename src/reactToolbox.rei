@@ -187,7 +187,7 @@ module DatePicker: {
     let to_string: t => string;
   };
   let make:
-    value::[ | `Float float | `String string]? =>
+    value::[ | `Date Js.Date.t | `String string]? =>
     theme::Js.t {..}? =>
     sundayFirstDayOfWeek::bool? =>
     style::ReactDOMRe.style? =>
@@ -221,16 +221,16 @@ module DatePicker: {
     onChange::(ReactEventRe.Form.t => unit)? =>
     okLabel::string? =>
     name::string? =>
-    minDate::float? =>
-    maxDate::float? =>
+    minDate::Js.Date.t? =>
+    maxDate::Js.Date.t? =>
     locale::[ | `Enum Locale.t | `Object (Js.t {..})]? =>
     label::string? =>
     inputFormat::Js.t {..}? =>
     inputClassName::string? =>
     icon::ReasonReact.reactElement? =>
     error::string? =>
-    enabledDates::array float? =>
-    disabledDates::array float? =>
+    enabledDates::array Js.Date.t? =>
+    disabledDates::array Js.Date.t? =>
     className::string? =>
     cancelLabel::string? =>
     autoOk::bool? =>
@@ -1743,7 +1743,7 @@ module TimePicker: {
     let to_string: t => string;
   };
   let make:
-    value::float? =>
+    value::Js.Date.t? =>
     theme::Js.t {..}? =>
     readonly::bool? =>
     onOverlayClick::(ReactEventRe.Mouse.t => unit)? =>
