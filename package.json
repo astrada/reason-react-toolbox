@@ -1,6 +1,6 @@
 {
   "name": "reason-react-toolbox",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Reason bindings for react-toolbox",
   "scripts": {
     "build": "bsb -make-world",
