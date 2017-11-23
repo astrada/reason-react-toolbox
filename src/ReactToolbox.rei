@@ -1,7 +1,7 @@
 module ThemeProvider: {
   type theme;
   let make:
-    (~theme: theme, array(ReasonReact.reactElement)) =>
+    (~theme: theme, 'children) =>
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
@@ -63,7 +63,7 @@ module AppBar: {
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
       ~title: string=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -190,7 +190,7 @@ module Autocomplete: {
       ~theme: 'b=?,
       ~_type: string=?,
       ~value: 'c=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -245,7 +245,7 @@ module Avatar: {
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
       ~title: string=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -320,7 +320,7 @@ module BrowseButton: {
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
       ~_type: string=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -395,7 +395,7 @@ module Button: {
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
       ~_type: string=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -444,7 +444,7 @@ module Card: {
       ~raised: bool=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -491,7 +491,7 @@ module CardActions: {
       ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -552,7 +552,7 @@ module CardMedia: {
       ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -599,7 +599,7 @@ module CardText: {
       ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -652,7 +652,7 @@ module CardTitle: {
       ~subtitle: ReasonReact.reactElement=?,
       ~theme: Js.t({..})=?,
       ~title: ReasonReact.reactElement=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -711,7 +711,7 @@ module Checkbox: {
       ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -762,7 +762,7 @@ module Chip: {
       ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -882,7 +882,7 @@ module DatePicker: {
       ~sundayFirstDayOfWeek: bool=?,
       ~theme: Js.t({..})=?,
       ~value: [ | `Date(Js.Date.t) | `String(string)]=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -954,7 +954,7 @@ module Dialog: {
       ~theme: Js.t({..})=?,
       ~title: string=?,
       ~_type: [ | `Enum(Type.t) | `String(string)]=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -1017,7 +1017,7 @@ module Drawer: {
       ~theme: Js.t({..})=?,
       ~_type: Type.t=?,
       ~withOverlay: bool=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -1090,7 +1090,7 @@ module Dropdown: {
       ~template: Js.t({..})=?,
       ~theme: Js.t({..})=?,
       ~value: [ | `String(string) | `Float(float)]=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -1137,7 +1137,7 @@ module FontIcon: {
       ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
       ~style: ReactDOMRe.style=?,
       ~value: ReasonReact.reactElement=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -1202,7 +1202,7 @@ module IconButton: {
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
       ~_type: string=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -1277,7 +1277,7 @@ module IconMenu: {
       ~selected: 'a=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -1362,7 +1362,7 @@ module Input: {
       ~theme: Js.t({..})=?,
       ~_type: string=?,
       ~value: 'a=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -1409,7 +1409,7 @@ module Layout: {
       ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -1466,7 +1466,7 @@ module Link: {
       ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -1517,7 +1517,7 @@ module List: {
       ~selectable: bool=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -1580,7 +1580,7 @@ module ListCheckbox: {
       ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -1629,7 +1629,7 @@ module ListDivider: {
       ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -1644,7 +1644,7 @@ module ListItemAction: {
        @param action List item action.
        @param theme Object defining the component class name mappings. */
   let make:
-    (~action: ReasonReact.reactElement=?, ~theme: Js.t({..})=?, array(ReasonReact.reactElement)) =>
+    (~action: ReasonReact.reactElement=?, ~theme: Js.t({..})=?, 'children) =>
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
@@ -1664,7 +1664,7 @@ module ListItemActions: {
        @param theme Object defining the component class name mappings.
        @param type List item action type. */
   let make:
-    (~theme: 'a=?, ~_type: Type.t=?, array(ReasonReact.reactElement)) =>
+    (~theme: 'a=?, ~_type: Type.t=?, 'children) =>
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
@@ -1692,7 +1692,7 @@ module ListItemContent: {
       ~legend: string=?,
       ~theme: Js.t({..})=?,
       ~_type: Type.t=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -1761,7 +1761,7 @@ module ListItemLayout: {
       ~style: ReactDOMRe.style=?,
       ~theme: 'a=?,
       ~_to: string=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -1810,7 +1810,7 @@ module ListItemText: {
       ~primary: bool=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -1859,7 +1859,7 @@ module ListSubHeader: {
       ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -1934,7 +1934,7 @@ module Menu: {
       ~selected: 'a=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -1981,7 +1981,7 @@ module MenuDivider: {
       ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -2038,7 +2038,7 @@ module MenuItem: {
       ~shortcut: string=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -2119,7 +2119,7 @@ module NavDrawer: {
       ~theme: Js.t({..})=?,
       ~_type: Type.t=?,
       ~withOverlay: bool=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -2178,7 +2178,7 @@ module Navigation: {
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
       ~_type: Type.t=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -2204,7 +2204,7 @@ module Overlay: {
       ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
       ~onEscKeyDown: ReasonReact.Callback.t(ReactEventRe.Keyboard.t)=?,
       ~theme: Js.t({..})=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -2253,7 +2253,7 @@ module Panel: {
       ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -2300,7 +2300,7 @@ module Portal: {
       ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
       ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
       ~style: ReactDOMRe.style=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -2375,7 +2375,7 @@ module ProgressBar: {
       ~theme: Js.t({..})=?,
       ~_type: Type.t=?,
       ~value: float=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -2438,7 +2438,7 @@ module RadioButton: {
       ~style: ReactDOMRe.style=?,
       ~theme: 'a=?,
       ~value: 'b=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -2491,7 +2491,7 @@ module RadioGroup: {
       ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
       ~style: ReactDOMRe.style=?,
       ~value: 'a=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -2574,7 +2574,7 @@ module Sidebar: {
       ~_type: Type.t=?,
       ~width: float=?,
       ~withOverlay: bool=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -2644,7 +2644,7 @@ module Slider: {
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
       ~value: float=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -2710,7 +2710,7 @@ module Snackbar: {
       ~theme: Js.t({..})=?,
       ~timeout: float=?,
       ~_type: Type.t=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -2771,7 +2771,7 @@ module Switch: {
       ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -2832,7 +2832,7 @@ module Tab: {
       ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -2883,7 +2883,7 @@ module TabContent: {
       ~style: ReactDOMRe.style=?,
       ~tabIndex: float=?,
       ~theme: Js.t({..})=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -2936,7 +2936,7 @@ module Table: {
       ~selectable: bool=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -3005,7 +3005,7 @@ module TableCell: {
       ~style: ReactDOMRe.style=?,
       ~tagName: TagName.t=?,
       ~theme: Js.t({..})=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -3062,7 +3062,7 @@ module TableHead: {
       ~selected: bool=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -3117,7 +3117,7 @@ module TableRow: {
       ~selected: bool=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -3184,7 +3184,7 @@ module Tabs: {
       ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
@@ -3238,7 +3238,7 @@ module TimePicker: {
       ~readonly: bool=?,
       ~theme: Js.t({..})=?,
       ~value: Js.Date.t=?,
-      array(ReasonReact.reactElement)
+      'children
     ) =>
     ReasonReact.component(
       ReasonReact.stateless,
