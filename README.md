@@ -18,9 +18,11 @@ This library provides Reason bindings for
 
 Run:
 
-    yarn add reason-react-toolbox
+    yarn add --dev @astrada/reason-react-toolbox
 
-to add the library to your project dependencies. And add `reason-react-toolbox` to `dependencies` node of your `bsconfig.json`.
+to add the library to your project dependencies. And add
+`@astrada/reason-react-toolbox` to `dependencies` node of your
+`bsconfig.json`.
 
 `ReactToolbox` module provides [raw
 components](https://github.com/react-toolbox/react-toolbox#raw-component) that

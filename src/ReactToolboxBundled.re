@@ -14,13 +14,14 @@ let unwrapValue =
   | `Enum(_) => assert false;
 
 let optionMap = (fn, option) =>
-  switch option {
+  switch (option) {
   | Some(value) => Some(fn(value))
   | None => None
   };
 
 module AppBar = {
-  [@bs.module "react-toolbox/lib/app_bar"] external reactClass : ReasonReact.reactClass = "AppBar";
+  [@bs.module "react-toolbox/lib/app_bar"]
+  external reactClass : ReasonReact.reactClass = "AppBar";
   let make =
       (
         ~className: option(string)=?,
@@ -62,7 +63,8 @@ module AppBar = {
       ~reactClass,
       ~props={
         "className": Js.Nullable.from_opt(className),
-        "fixed": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, fixed)),
+        "fixed":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, fixed)),
         "flat": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, flat)),
         "leftIcon": Js.Nullable.from_opt(leftIcon),
         "onClick": Js.Nullable.from_opt(onClick),
@@ -90,7 +92,8 @@ module AppBar = {
         "onTouchMove": Js.Nullable.from_opt(onTouchMove),
         "onTouchStart": Js.Nullable.from_opt(onTouchStart),
         "rightIcon": Js.Nullable.from_opt(rightIcon),
-        "scrollHide": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, scrollHide)),
+        "scrollHide":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, scrollHide)),
         "style": Js.Nullable.from_opt(style),
         "theme": Js.Nullable.from_opt(theme),
         "title": Js.Nullable.from_opt(title)
@@ -135,8 +138,8 @@ module Autocomplete = {
       | Anywhere => "anywhere"
       | Word => "word";
   };
-  [@bs.module "react-toolbox/lib/autocomplete"] external reactClass : ReasonReact.reactClass =
-    "Autocomplete";
+  [@bs.module "react-toolbox/lib/autocomplete"]
+  external reactClass : ReasonReact.reactClass = "Autocomplete";
   let make =
       (
         ~allowCreate: option(bool)=?,
@@ -153,8 +156,8 @@ module Autocomplete = {
         ~multiline: option(bool)=?,
         ~multiple: option(bool)=?,
         ~name: option(string)=?,
-        ~onBlur: option(((ReactEventRe.Focus.t, string) => unit))=?,
-        ~onChange: option((('value, ReactEventRe.Mouse.t) => unit))=?,
+        ~onBlur: option((ReactEventRe.Focus.t, string) => unit)=?,
+        ~onChange: option(('value, ReactEventRe.Mouse.t) => unit)=?,
         ~onClick: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
         ~onContextMenu: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
         ~onDoubleClick: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
@@ -198,20 +201,30 @@ module Autocomplete = {
     ReasonReact.wrapJsForReason(
       ~reactClass,
       ~props={
-        "allowCreate": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, allowCreate)),
+        "allowCreate":
+          Js.Nullable.from_opt(
+            optionMap(Js.Boolean.to_js_boolean, allowCreate)
+          ),
         "className": Js.Nullable.from_opt(className),
-        "direction": Js.Nullable.from_opt(optionMap(Direction.to_string, direction)),
-        "disabled": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, disabled)),
+        "direction":
+          Js.Nullable.from_opt(optionMap(Direction.to_string, direction)),
+        "disabled":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, disabled)),
         "error": Js.Nullable.from_opt(error),
-        "floating": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, floating)),
+        "floating":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, floating)),
         "hint": Js.Nullable.from_opt(hint),
         "icon": Js.Nullable.from_opt(icon),
         "keepFocusOnChange":
-          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, keepFocusOnChange)),
+          Js.Nullable.from_opt(
+            optionMap(Js.Boolean.to_js_boolean, keepFocusOnChange)
+          ),
         "label": Js.Nullable.from_opt(label),
         "maxLength": Js.Nullable.from_opt(maxLength),
-        "multiline": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, multiline)),
-        "multiple": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, multiple)),
+        "multiline":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, multiline)),
+        "multiple":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, multiple)),
         "name": Js.Nullable.from_opt(name),
         "onBlur": Js.Nullable.from_opt(onBlur),
         "onChange": Js.Nullable.from_opt(onChange),
@@ -242,18 +255,27 @@ module Autocomplete = {
         "onTouchEnd": Js.Nullable.from_opt(onTouchEnd),
         "onTouchMove": Js.Nullable.from_opt(onTouchMove),
         "onTouchStart": Js.Nullable.from_opt(onTouchStart),
-        "required": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, required)),
+        "required":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, required)),
         "rows": Js.Nullable.from_opt(rows),
         "selectedPosition":
-          Js.Nullable.from_opt(optionMap(SelectedPosition.to_string, selectedPosition)),
+          Js.Nullable.from_opt(
+            optionMap(SelectedPosition.to_string, selectedPosition)
+          ),
         "showSelectedWhenNotInSource":
-          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, showSelectedWhenNotInSource)),
+          Js.Nullable.from_opt(
+            optionMap(Js.Boolean.to_js_boolean, showSelectedWhenNotInSource)
+          ),
         "showSuggestionsWhenValueIsSet":
-          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, showSuggestionsWhenValueIsSet)),
+          Js.Nullable.from_opt(
+            optionMap(Js.Boolean.to_js_boolean, showSuggestionsWhenValueIsSet)
+          ),
         "source": Js.Nullable.from_opt(source),
         "style": Js.Nullable.from_opt(style),
         "suggestionMatch":
-          Js.Nullable.from_opt(optionMap(SuggestionMatch.to_string, suggestionMatch)),
+          Js.Nullable.from_opt(
+            optionMap(SuggestionMatch.to_string, suggestionMatch)
+          ),
         "theme": Js.Nullable.from_opt(theme),
         "type": Js.Nullable.from_opt(_type),
         "value": Js.Nullable.from_opt(value)
@@ -263,7 +285,8 @@ module Autocomplete = {
 };
 
 module Avatar = {
-  [@bs.module "react-toolbox/lib/avatar"] external reactClass : ReasonReact.reactClass = "Avatar";
+  [@bs.module "react-toolbox/lib/avatar"]
+  external reactClass : ReasonReact.reactClass = "Avatar";
   let make =
       (
         ~className: option(string)=?,
@@ -301,7 +324,8 @@ module Avatar = {
       ~reactClass,
       ~props={
         "className": Js.Nullable.from_opt(className),
-        "cover": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, cover)),
+        "cover":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, cover)),
         "icon": Js.Nullable.from_opt(icon),
         "image": Js.Nullable.from_opt(image),
         "onClick": Js.Nullable.from_opt(onClick),
@@ -335,8 +359,8 @@ module Avatar = {
 };
 
 module BrowseButton = {
-  [@bs.module "react-toolbox/lib/button"] external reactClass : ReasonReact.reactClass =
-    "BrowseButton";
+  [@bs.module "react-toolbox/lib/button"]
+  external reactClass : ReasonReact.reactClass = "BrowseButton";
   let make =
       (
         ~accent: option(bool)=?,
@@ -383,17 +407,22 @@ module BrowseButton = {
     ReasonReact.wrapJsForReason(
       ~reactClass,
       ~props={
-        "accent": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, accent)),
+        "accent":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, accent)),
         "className": Js.Nullable.from_opt(className),
-        "disabled": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, disabled)),
+        "disabled":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, disabled)),
         "flat": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, flat)),
-        "floating": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, floating)),
+        "floating":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, floating)),
         "href": Js.Nullable.from_opt(href),
         "icon": Js.Nullable.from_opt(icon),
-        "inverse": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, inverse)),
+        "inverse":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, inverse)),
         "label": Js.Nullable.from_opt(label),
         "mini": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, mini)),
-        "neutral": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, neutral)),
+        "neutral":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, neutral)),
         "onClick": Js.Nullable.from_opt(onClick),
         "onContextMenu": Js.Nullable.from_opt(onContextMenu),
         "onDoubleClick": Js.Nullable.from_opt(onDoubleClick),
@@ -416,9 +445,12 @@ module BrowseButton = {
         "onTouchEnd": Js.Nullable.from_opt(onTouchEnd),
         "onTouchMove": Js.Nullable.from_opt(onTouchMove),
         "onTouchStart": Js.Nullable.from_opt(onTouchStart),
-        "primary": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, primary)),
-        "raised": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, raised)),
-        "ripple": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, ripple)),
+        "primary":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, primary)),
+        "raised":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, raised)),
+        "ripple":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, ripple)),
         "style": Js.Nullable.from_opt(style),
         "theme": Js.Nullable.from_opt(theme),
         "type": Js.Nullable.from_opt(_type)
@@ -428,7 +460,8 @@ module BrowseButton = {
 };
 
 module Button = {
-  [@bs.module "react-toolbox/lib/button"] external reactClass : ReasonReact.reactClass = "Button";
+  [@bs.module "react-toolbox/lib/button"]
+  external reactClass : ReasonReact.reactClass = "Button";
   let make =
       (
         ~accent: option(bool)=?,
@@ -475,17 +508,22 @@ module Button = {
     ReasonReact.wrapJsForReason(
       ~reactClass,
       ~props={
-        "accent": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, accent)),
+        "accent":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, accent)),
         "className": Js.Nullable.from_opt(className),
-        "disabled": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, disabled)),
+        "disabled":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, disabled)),
         "flat": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, flat)),
-        "floating": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, floating)),
+        "floating":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, floating)),
         "href": Js.Nullable.from_opt(href),
         "icon": Js.Nullable.from_opt(icon),
-        "inverse": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, inverse)),
+        "inverse":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, inverse)),
         "label": Js.Nullable.from_opt(label),
         "mini": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, mini)),
-        "neutral": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, neutral)),
+        "neutral":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, neutral)),
         "onClick": Js.Nullable.from_opt(onClick),
         "onContextMenu": Js.Nullable.from_opt(onContextMenu),
         "onDoubleClick": Js.Nullable.from_opt(onDoubleClick),
@@ -508,9 +546,12 @@ module Button = {
         "onTouchEnd": Js.Nullable.from_opt(onTouchEnd),
         "onTouchMove": Js.Nullable.from_opt(onTouchMove),
         "onTouchStart": Js.Nullable.from_opt(onTouchStart),
-        "primary": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, primary)),
-        "raised": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, raised)),
-        "ripple": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, ripple)),
+        "primary":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, primary)),
+        "raised":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, raised)),
+        "ripple":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, ripple)),
         "style": Js.Nullable.from_opt(style),
         "theme": Js.Nullable.from_opt(theme),
         "type": Js.Nullable.from_opt(_type)
@@ -520,7 +561,8 @@ module Button = {
 };
 
 module Card = {
-  [@bs.module "react-toolbox/lib/card"] external reactClass : ReasonReact.reactClass = "Card";
+  [@bs.module "react-toolbox/lib/card"]
+  external reactClass : ReasonReact.reactClass = "Card";
   let make =
       (
         ~className: option(string)=?,
@@ -577,7 +619,8 @@ module Card = {
         "onTouchEnd": Js.Nullable.from_opt(onTouchEnd),
         "onTouchMove": Js.Nullable.from_opt(onTouchMove),
         "onTouchStart": Js.Nullable.from_opt(onTouchStart),
-        "raised": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, raised)),
+        "raised":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, raised)),
         "style": Js.Nullable.from_opt(style),
         "theme": Js.Nullable.from_opt(theme)
       },
@@ -586,8 +629,8 @@ module Card = {
 };
 
 module CardActions = {
-  [@bs.module "react-toolbox/lib/card"] external reactClass : ReasonReact.reactClass =
-    "CardActions";
+  [@bs.module "react-toolbox/lib/card"]
+  external reactClass : ReasonReact.reactClass = "CardActions";
   let make =
       (
         ~className: option(string)=?,
@@ -660,7 +703,8 @@ module CardMedia = {
       | Wide => "wide"
       | Square => "square";
   };
-  [@bs.module "react-toolbox/lib/card"] external reactClass : ReasonReact.reactClass = "CardMedia";
+  [@bs.module "react-toolbox/lib/card"]
+  external reactClass : ReasonReact.reactClass = "CardMedia";
   let make =
       (
         ~aspectRatio: option(AspectRatio.t)=?,
@@ -697,10 +741,14 @@ module CardMedia = {
     ReasonReact.wrapJsForReason(
       ~reactClass,
       ~props={
-        "aspectRatio": Js.Nullable.from_opt(optionMap(AspectRatio.to_string, aspectRatio)),
+        "aspectRatio":
+          Js.Nullable.from_opt(optionMap(AspectRatio.to_string, aspectRatio)),
         "className": Js.Nullable.from_opt(className),
         "color": Js.Nullable.from_opt(color),
-        "contentOverlay": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, contentOverlay)),
+        "contentOverlay":
+          Js.Nullable.from_opt(
+            optionMap(Js.Boolean.to_js_boolean, contentOverlay)
+          ),
         "image": Js.Nullable.from_opt(image),
         "onClick": Js.Nullable.from_opt(onClick),
         "onContextMenu": Js.Nullable.from_opt(onContextMenu),
@@ -732,7 +780,8 @@ module CardMedia = {
 };
 
 module CardText = {
-  [@bs.module "react-toolbox/lib/card"] external reactClass : ReasonReact.reactClass = "CardText";
+  [@bs.module "react-toolbox/lib/card"]
+  external reactClass : ReasonReact.reactClass = "CardText";
   let make =
       (
         ~className: option(string)=?,
@@ -796,7 +845,8 @@ module CardText = {
 };
 
 module CardTitle = {
-  [@bs.module "react-toolbox/lib/card"] external reactClass : ReasonReact.reactClass = "CardTitle";
+  [@bs.module "react-toolbox/lib/card"]
+  external reactClass : ReasonReact.reactClass = "CardTitle";
   let make =
       (
         ~avatar: option(ReasonReact.reactElement)=?,
@@ -866,8 +916,8 @@ module CardTitle = {
 };
 
 module Checkbox = {
-  [@bs.module "react-toolbox/lib/checkbox"] external reactClass : ReasonReact.reactClass =
-    "Checkbox";
+  [@bs.module "react-toolbox/lib/checkbox"]
+  external reactClass : ReasonReact.reactClass = "Checkbox";
   let make =
       (
         ~checked: option(bool)=?,
@@ -876,7 +926,7 @@ module Checkbox = {
         ~label: option(ReasonReact.reactElement)=?,
         ~name: option(string)=?,
         ~onBlur: option(ReasonReact.Callback.t(ReactEventRe.Focus.t))=?,
-        ~onChange: option(((Js.boolean, ReactEventRe.Mouse.t) => unit))=?,
+        ~onChange: option((Js.boolean, ReactEventRe.Mouse.t) => unit)=?,
         ~onClick: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
         ~onContextMenu: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
         ~onDoubleClick: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
@@ -906,9 +956,11 @@ module Checkbox = {
     ReasonReact.wrapJsForReason(
       ~reactClass,
       ~props={
-        "checked": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, checked)),
+        "checked":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, checked)),
         "className": Js.Nullable.from_opt(className),
-        "disabled": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, disabled)),
+        "disabled":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, disabled)),
         "label": Js.Nullable.from_opt(label),
         "name": Js.Nullable.from_opt(name),
         "onBlur": Js.Nullable.from_opt(onBlur),
@@ -943,7 +995,8 @@ module Checkbox = {
 };
 
 module Chip = {
-  [@bs.module "react-toolbox/lib/chip"] external reactClass : ReasonReact.reactClass = "Chip";
+  [@bs.module "react-toolbox/lib/chip"]
+  external reactClass : ReasonReact.reactClass = "Chip";
   let make =
       (
         ~className: option(string)=?,
@@ -979,7 +1032,8 @@ module Chip = {
       ~reactClass,
       ~props={
         "className": Js.Nullable.from_opt(className),
-        "deletable": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, deletable)),
+        "deletable":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, deletable)),
         "onClick": Js.Nullable.from_opt(onClick),
         "onContextMenu": Js.Nullable.from_opt(onContextMenu),
         "onDeleteClick": Js.Nullable.from_opt(onDeleteClick),
@@ -1062,8 +1116,8 @@ module DatePicker = {
       | Zh_hk => "zh-hk"
       | Zh_tw => "zh-tw";
   };
-  [@bs.module "react-toolbox/lib/date_picker"] external reactClass : ReasonReact.reactClass =
-    "DatePicker";
+  [@bs.module "react-toolbox/lib/date_picker"]
+  external reactClass : ReasonReact.reactClass = "DatePicker";
   let make =
       (
         ~active: option(bool)=?,
@@ -1082,7 +1136,7 @@ module DatePicker = {
         ~minDate: option(Js.Date.t)=?,
         ~name: option(string)=?,
         ~okLabel: option(string)=?,
-        ~onChange: option(((Js.Date.t, ReactEventRe.Mouse.t) => unit))=?,
+        ~onChange: option((Js.Date.t, ReactEventRe.Mouse.t) => unit)=?,
         ~onClick: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
         ~onContextMenu: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
         ~onDismiss: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
@@ -1119,8 +1173,10 @@ module DatePicker = {
     ReasonReact.wrapJsForReason(
       ~reactClass,
       ~props={
-        "active": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, active)),
-        "autoOk": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, autoOk)),
+        "active":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, active)),
+        "autoOk":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, autoOk)),
         "cancelLabel": Js.Nullable.from_opt(cancelLabel),
         "className": Js.Nullable.from_opt(className),
         "disabledDates": Js.Nullable.from_opt(disabledDates),
@@ -1170,10 +1226,13 @@ module DatePicker = {
         "onTouchEnd": Js.Nullable.from_opt(onTouchEnd),
         "onTouchMove": Js.Nullable.from_opt(onTouchMove),
         "onTouchStart": Js.Nullable.from_opt(onTouchStart),
-        "readonly": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, readonly)),
+        "readonly":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, readonly)),
         "style": Js.Nullable.from_opt(style),
         "sundayFirstDayOfWeek":
-          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, sundayFirstDayOfWeek)),
+          Js.Nullable.from_opt(
+            optionMap(Js.Boolean.to_js_boolean, sundayFirstDayOfWeek)
+          ),
         "theme": Js.Nullable.from_opt(theme),
         "value": Js.Nullable.from_opt(optionMap(unwrapValue, value))
       },
@@ -1193,7 +1252,8 @@ module Dialog = {
       | Normal => "normal"
       | Large => "large";
   };
-  [@bs.module "react-toolbox/lib/dialog"] external reactClass : ReasonReact.reactClass = "Dialog";
+  [@bs.module "react-toolbox/lib/dialog"]
+  external reactClass : ReasonReact.reactClass = "Dialog";
   let make =
       (
         ~actions: option(array(Js.t({..})))=?,
@@ -1219,8 +1279,10 @@ module Dialog = {
         ~onMouseOver: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
         ~onMouseUp: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
         ~onOverlayClick: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
-        ~onOverlayMouseDown: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
-        ~onOverlayMouseMove: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
+        ~onOverlayMouseDown:
+           option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
+        ~onOverlayMouseMove:
+           option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
         ~onOverlayMouseUp: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
         ~onTouchCancel: option(ReasonReact.Callback.t(ReactEventRe.Touch.t))=?,
         ~onTouchEnd: option(ReasonReact.Callback.t(ReactEventRe.Touch.t))=?,
@@ -1236,7 +1298,8 @@ module Dialog = {
       ~reactClass,
       ~props={
         "actions": Js.Nullable.from_opt(actions),
-        "active": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, active)),
+        "active":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, active)),
         "className": Js.Nullable.from_opt(className),
         "onClick": Js.Nullable.from_opt(onClick),
         "onContextMenu": Js.Nullable.from_opt(onContextMenu),
@@ -1292,7 +1355,8 @@ module Drawer = {
       | Left => "left"
       | Right => "right";
   };
-  [@bs.module "react-toolbox/lib/drawer"] external reactClass : ReasonReact.reactClass = "Drawer";
+  [@bs.module "react-toolbox/lib/drawer"]
+  external reactClass : ReasonReact.reactClass = "Drawer";
   let make =
       (
         ~active: option(bool)=?,
@@ -1330,9 +1394,11 @@ module Drawer = {
     ReasonReact.wrapJsForReason(
       ~reactClass,
       ~props={
-        "active": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, active)),
+        "active":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, active)),
         "className": Js.Nullable.from_opt(className),
-        "insideTree": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, insideTree)),
+        "insideTree":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, insideTree)),
         "onClick": Js.Nullable.from_opt(onClick),
         "onContextMenu": Js.Nullable.from_opt(onContextMenu),
         "onDoubleClick": Js.Nullable.from_opt(onDoubleClick),
@@ -1359,15 +1425,18 @@ module Drawer = {
         "style": Js.Nullable.from_opt(style),
         "theme": Js.Nullable.from_opt(theme),
         "type": Js.Nullable.from_opt(optionMap(Type.to_string, _type)),
-        "withOverlay": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, withOverlay))
+        "withOverlay":
+          Js.Nullable.from_opt(
+            optionMap(Js.Boolean.to_js_boolean, withOverlay)
+          )
       },
       children
     );
 };
 
 module Dropdown = {
-  [@bs.module "react-toolbox/lib/dropdown"] external reactClass : ReasonReact.reactClass =
-    "Dropdown";
+  [@bs.module "react-toolbox/lib/dropdown"]
+  external reactClass : ReasonReact.reactClass = "Dropdown";
   let make =
       (
         ~allowBlank: option(bool)=?,
@@ -1378,7 +1447,7 @@ module Dropdown = {
         ~label: option(string)=?,
         ~name: option(string)=?,
         ~onBlur: option(ReasonReact.Callback.t(ReactEventRe.Focus.t))=?,
-        ~onChange: option((('value, ReactEventRe.Mouse.t) => unit))=?,
+        ~onChange: option(('value, ReactEventRe.Mouse.t) => unit)=?,
         ~onClick: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
         ~onContextMenu: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
         ~onDoubleClick: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
@@ -1413,10 +1482,12 @@ module Dropdown = {
     ReasonReact.wrapJsForReason(
       ~reactClass,
       ~props={
-        "allowBlank": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, allowBlank)),
+        "allowBlank":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, allowBlank)),
         "auto": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, auto)),
         "className": Js.Nullable.from_opt(className),
-        "disabled": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, disabled)),
+        "disabled":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, disabled)),
         "error": Js.Nullable.from_opt(error),
         "label": Js.Nullable.from_opt(label),
         "name": Js.Nullable.from_opt(name),
@@ -1445,7 +1516,8 @@ module Dropdown = {
         "onTouchEnd": Js.Nullable.from_opt(onTouchEnd),
         "onTouchMove": Js.Nullable.from_opt(onTouchMove),
         "onTouchStart": Js.Nullable.from_opt(onTouchStart),
-        "required": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, required)),
+        "required":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, required)),
         "source": source,
         "style": Js.Nullable.from_opt(style),
         "template": Js.Nullable.from_opt(template),
@@ -1458,8 +1530,7 @@ module Dropdown = {
 
 module FontIcon = {
   [@bs.module "react-toolbox/lib/font_icon/FontIcon"]
-  external reactClass : ReasonReact.reactClass =
-    "default";
+  external reactClass : ReasonReact.reactClass = "default";
   let make =
       (
         ~className: option(string)=?,
@@ -1523,8 +1594,8 @@ module FontIcon = {
 };
 
 module IconButton = {
-  [@bs.module "react-toolbox/lib/button"] external reactClass : ReasonReact.reactClass =
-    "IconButton";
+  [@bs.module "react-toolbox/lib/button"]
+  external reactClass : ReasonReact.reactClass = "IconButton";
   let make =
       (
         ~accent: option(bool)=?,
@@ -1566,13 +1637,17 @@ module IconButton = {
     ReasonReact.wrapJsForReason(
       ~reactClass,
       ~props={
-        "accent": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, accent)),
+        "accent":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, accent)),
         "className": Js.Nullable.from_opt(className),
-        "disabled": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, disabled)),
+        "disabled":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, disabled)),
         "href": Js.Nullable.from_opt(href),
         "icon": Js.Nullable.from_opt(icon),
-        "inverse": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, inverse)),
-        "neutral": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, neutral)),
+        "inverse":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, inverse)),
+        "neutral":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, neutral)),
         "onClick": Js.Nullable.from_opt(onClick),
         "onContextMenu": Js.Nullable.from_opt(onContextMenu),
         "onDoubleClick": Js.Nullable.from_opt(onDoubleClick),
@@ -1595,8 +1670,10 @@ module IconButton = {
         "onTouchEnd": Js.Nullable.from_opt(onTouchEnd),
         "onTouchMove": Js.Nullable.from_opt(onTouchMove),
         "onTouchStart": Js.Nullable.from_opt(onTouchStart),
-        "primary": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, primary)),
-        "ripple": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, ripple)),
+        "primary":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, primary)),
+        "ripple":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, ripple)),
         "style": Js.Nullable.from_opt(style),
         "theme": Js.Nullable.from_opt(theme),
         "type": Js.Nullable.from_opt(_type)
@@ -1623,7 +1700,8 @@ module IconMenu = {
       | BottomLeft => "bottomLeft"
       | BottomRight => "bottomRight";
   };
-  [@bs.module "react-toolbox/lib/menu"] external reactClass : ReasonReact.reactClass = "IconMenu";
+  [@bs.module "react-toolbox/lib/menu"]
+  external reactClass : ReasonReact.reactClass = "IconMenu";
   let make =
       (
         ~className: option(string)=?,
@@ -1667,8 +1745,10 @@ module IconMenu = {
       ~props={
         "className": Js.Nullable.from_opt(className),
         "icon": Js.Nullable.from_opt(icon),
-        "iconRipple": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, iconRipple)),
-        "menuRipple": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, menuRipple)),
+        "iconRipple":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, iconRipple)),
+        "menuRipple":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, menuRipple)),
         "onClick": Js.Nullable.from_opt(onClick),
         "onContextMenu": Js.Nullable.from_opt(onContextMenu),
         "onDoubleClick": Js.Nullable.from_opt(onDoubleClick),
@@ -1694,8 +1774,10 @@ module IconMenu = {
         "onTouchEnd": Js.Nullable.from_opt(onTouchEnd),
         "onTouchMove": Js.Nullable.from_opt(onTouchMove),
         "onTouchStart": Js.Nullable.from_opt(onTouchStart),
-        "position": Js.Nullable.from_opt(optionMap(Position.to_string, position)),
-        "selectable": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, selectable)),
+        "position":
+          Js.Nullable.from_opt(optionMap(Position.to_string, position)),
+        "selectable":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, selectable)),
         "selected": Js.Nullable.from_opt(selected),
         "style": Js.Nullable.from_opt(style),
         "theme": Js.Nullable.from_opt(theme)
@@ -1705,7 +1787,8 @@ module IconMenu = {
 };
 
 module Input = {
-  [@bs.module "react-toolbox/lib/input"] external reactClass : ReasonReact.reactClass = "Input";
+  [@bs.module "react-toolbox/lib/input"]
+  external reactClass : ReasonReact.reactClass = "Input";
   let make =
       (
         ~className: option(string)=?,
@@ -1719,7 +1802,7 @@ module Input = {
         ~multiline: option(bool)=?,
         ~name: option(string)=?,
         ~onBlur: option(ReasonReact.Callback.t(ReactEventRe.Focus.t))=?,
-        ~onChange: option(((string, ReactEventRe.Mouse.t) => unit))=?,
+        ~onChange: option((string, ReactEventRe.Mouse.t) => unit)=?,
         ~onClick: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
         ~onContextMenu: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
         ~onDoubleClick: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
@@ -1758,14 +1841,17 @@ module Input = {
       ~reactClass,
       ~props={
         "className": Js.Nullable.from_opt(className),
-        "disabled": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, disabled)),
+        "disabled":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, disabled)),
         "error": Js.Nullable.from_opt(error),
-        "floating": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, floating)),
+        "floating":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, floating)),
         "hint": Js.Nullable.from_opt(hint),
         "icon": Js.Nullable.from_opt(icon),
         "label": Js.Nullable.from_opt(label),
         "maxLength": Js.Nullable.from_opt(maxLength),
-        "multiline": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, multiline)),
+        "multiline":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, multiline)),
         "name": Js.Nullable.from_opt(name),
         "onBlur": Js.Nullable.from_opt(onBlur),
         "onChange": Js.Nullable.from_opt(onChange),
@@ -1795,7 +1881,8 @@ module Input = {
         "onTouchEnd": Js.Nullable.from_opt(onTouchEnd),
         "onTouchMove": Js.Nullable.from_opt(onTouchMove),
         "onTouchStart": Js.Nullable.from_opt(onTouchStart),
-        "required": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, required)),
+        "required":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, required)),
         "rows": Js.Nullable.from_opt(rows),
         "style": Js.Nullable.from_opt(style),
         "theme": Js.Nullable.from_opt(theme),
@@ -1807,7 +1894,8 @@ module Input = {
 };
 
 module Layout = {
-  [@bs.module "react-toolbox/lib/layout"] external reactClass : ReasonReact.reactClass = "Layout";
+  [@bs.module "react-toolbox/lib/layout"]
+  external reactClass : ReasonReact.reactClass = "Layout";
   let make =
       (
         ~className: option(string)=?,
@@ -1871,7 +1959,8 @@ module Layout = {
 };
 
 module Link = {
-  [@bs.module "react-toolbox/lib/link"] external reactClass : ReasonReact.reactClass = "Link";
+  [@bs.module "react-toolbox/lib/link"]
+  external reactClass : ReasonReact.reactClass = "Link";
   let make =
       (
         ~active: option(bool)=?,
@@ -1909,7 +1998,8 @@ module Link = {
     ReasonReact.wrapJsForReason(
       ~reactClass,
       ~props={
-        "active": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, active)),
+        "active":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, active)),
         "className": Js.Nullable.from_opt(className),
         "count": Js.Nullable.from_opt(count),
         "href": Js.Nullable.from_opt(href),
@@ -1945,7 +2035,8 @@ module Link = {
 };
 
 module List = {
-  [@bs.module "react-toolbox/lib/list"] external reactClass : ReasonReact.reactClass = "List";
+  [@bs.module "react-toolbox/lib/list"]
+  external reactClass : ReasonReact.reactClass = "List";
   let make =
       (
         ~className: option(string)=?,
@@ -2003,8 +2094,10 @@ module List = {
         "onTouchEnd": Js.Nullable.from_opt(onTouchEnd),
         "onTouchMove": Js.Nullable.from_opt(onTouchMove),
         "onTouchStart": Js.Nullable.from_opt(onTouchStart),
-        "ripple": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, ripple)),
-        "selectable": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, selectable)),
+        "ripple":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, ripple)),
+        "selectable":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, selectable)),
         "style": Js.Nullable.from_opt(style),
         "theme": Js.Nullable.from_opt(theme)
       },
@@ -2013,8 +2106,8 @@ module List = {
 };
 
 module ListCheckbox = {
-  [@bs.module "react-toolbox/lib/list"] external reactClass : ReasonReact.reactClass =
-    "ListCheckbox";
+  [@bs.module "react-toolbox/lib/list"]
+  external reactClass : ReasonReact.reactClass = "ListCheckbox";
   let make =
       (
         ~caption: option(string)=?,
@@ -2056,9 +2149,11 @@ module ListCheckbox = {
       ~reactClass,
       ~props={
         "caption": Js.Nullable.from_opt(caption),
-        "checked": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, checked)),
+        "checked":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, checked)),
         "className": Js.Nullable.from_opt(className),
-        "disabled": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, disabled)),
+        "disabled":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, disabled)),
         "legend": Js.Nullable.from_opt(legend),
         "name": Js.Nullable.from_opt(name),
         "onBlur": Js.Nullable.from_opt(onBlur),
@@ -2094,8 +2189,8 @@ module ListCheckbox = {
 };
 
 module ListDivider = {
-  [@bs.module "react-toolbox/lib/list"] external reactClass : ReasonReact.reactClass =
-    "ListDivider";
+  [@bs.module "react-toolbox/lib/list"]
+  external reactClass : ReasonReact.reactClass = "ListDivider";
   let make =
       (
         ~className: option(string)=?,
@@ -2130,7 +2225,8 @@ module ListDivider = {
       ~reactClass,
       ~props={
         "className": Js.Nullable.from_opt(className),
-        "inset": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, inset)),
+        "inset":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, inset)),
         "onClick": Js.Nullable.from_opt(onClick),
         "onContextMenu": Js.Nullable.from_opt(onContextMenu),
         "onDoubleClick": Js.Nullable.from_opt(onDoubleClick),
@@ -2161,12 +2257,20 @@ module ListDivider = {
 };
 
 module ListItemAction = {
-  [@bs.module "react-toolbox/lib/list"] external reactClass : ReasonReact.reactClass =
-    "ListItemAction";
-  let make = (~action: option(ReasonReact.reactElement)=?, ~theme: option(Js.t({..}))=?, children) =>
+  [@bs.module "react-toolbox/lib/list"]
+  external reactClass : ReasonReact.reactClass = "ListItemAction";
+  let make =
+      (
+        ~action: option(ReasonReact.reactElement)=?,
+        ~theme: option(Js.t({..}))=?,
+        children
+      ) =>
     ReasonReact.wrapJsForReason(
       ~reactClass,
-      ~props={"action": Js.Nullable.from_opt(action), "theme": Js.Nullable.from_opt(theme)},
+      ~props={
+        "action": Js.Nullable.from_opt(action),
+        "theme": Js.Nullable.from_opt(theme)
+      },
       children
     );
 };
@@ -2181,8 +2285,8 @@ module ListItemActions = {
       | Left => "left"
       | Right => "right";
   };
-  [@bs.module "react-toolbox/lib/list"] external reactClass : ReasonReact.reactClass =
-    "ListItemActions";
+  [@bs.module "react-toolbox/lib/list"]
+  external reactClass : ReasonReact.reactClass = "ListItemActions";
   let make = (~theme: option('a)=?, ~_type: option(Type.t)=?, children) =>
     ReasonReact.wrapJsForReason(
       ~reactClass,
@@ -2206,8 +2310,8 @@ module ListItemContent = {
       | Normal => "normal"
       | Large => "large";
   };
-  [@bs.module "react-toolbox/lib/list"] external reactClass : ReasonReact.reactClass =
-    "ListItemContent";
+  [@bs.module "react-toolbox/lib/list"]
+  external reactClass : ReasonReact.reactClass = "ListItemContent";
   let make =
       (
         ~caption: option(ReasonReact.reactElement)=?,
@@ -2229,17 +2333,19 @@ module ListItemContent = {
 };
 
 module ListItemLayout = {
-  [@bs.module "react-toolbox/lib/list"] external reactClass : ReasonReact.reactClass =
-    "ListItemLayout";
+  [@bs.module "react-toolbox/lib/list"]
+  external reactClass : ReasonReact.reactClass = "ListItemLayout";
   let make =
       (
-        ~avatar: option([ | `String(string) | `Element(ReasonReact.reactElement)])=?,
+        ~avatar:
+           option([ | `String(string) | `Element(ReasonReact.reactElement)])=?,
         ~caption: option(string)=?,
         ~className: option(string)=?,
         ~disabled: option(bool)=?,
         ~itemContent: option(Js.t({..}))=?,
         ~leftActions: option(array(ReasonReact.reactElement))=?,
-        ~leftIcon: option([ | `String(string) | `Element(ReasonReact.reactElement)])=?,
+        ~leftIcon:
+           option([ | `String(string) | `Element(ReasonReact.reactElement)])=?,
         ~legend: option(string)=?,
         ~onClick: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
         ~onContextMenu: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
@@ -2264,7 +2370,8 @@ module ListItemLayout = {
         ~onTouchMove: option(ReasonReact.Callback.t(ReactEventRe.Touch.t))=?,
         ~onTouchStart: option(ReasonReact.Callback.t(ReactEventRe.Touch.t))=?,
         ~rightActions: option(array(ReasonReact.reactElement))=?,
-        ~rightIcon: option([ | `String(string) | `Element(ReasonReact.reactElement)])=?,
+        ~rightIcon:
+           option([ | `String(string) | `Element(ReasonReact.reactElement)])=?,
         ~selectable: option(bool)=?,
         ~style: option(ReactDOMRe.style)=?,
         ~theme: option('a)=?,
@@ -2277,7 +2384,8 @@ module ListItemLayout = {
         "avatar": Js.Nullable.from_opt(optionMap(unwrapValue, avatar)),
         "caption": Js.Nullable.from_opt(caption),
         "className": Js.Nullable.from_opt(className),
-        "disabled": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, disabled)),
+        "disabled":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, disabled)),
         "itemContent": Js.Nullable.from_opt(itemContent),
         "leftActions": Js.Nullable.from_opt(leftActions),
         "leftIcon": Js.Nullable.from_opt(optionMap(unwrapValue, leftIcon)),
@@ -2306,7 +2414,8 @@ module ListItemLayout = {
         "onTouchStart": Js.Nullable.from_opt(onTouchStart),
         "rightActions": Js.Nullable.from_opt(rightActions),
         "rightIcon": Js.Nullable.from_opt(optionMap(unwrapValue, rightIcon)),
-        "selectable": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, selectable)),
+        "selectable":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, selectable)),
         "style": Js.Nullable.from_opt(style),
         "theme": Js.Nullable.from_opt(theme),
         "to": Js.Nullable.from_opt(_to)
@@ -2316,8 +2425,8 @@ module ListItemLayout = {
 };
 
 module ListItemText = {
-  [@bs.module "react-toolbox/lib/list"] external reactClass : ReasonReact.reactClass =
-    "ListItemText";
+  [@bs.module "react-toolbox/lib/list"]
+  external reactClass : ReasonReact.reactClass = "ListItemText";
   let make =
       (
         ~className: option(string)=?,
@@ -2374,7 +2483,8 @@ module ListItemText = {
         "onTouchEnd": Js.Nullable.from_opt(onTouchEnd),
         "onTouchMove": Js.Nullable.from_opt(onTouchMove),
         "onTouchStart": Js.Nullable.from_opt(onTouchStart),
-        "primary": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, primary)),
+        "primary":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, primary)),
         "style": Js.Nullable.from_opt(style),
         "theme": Js.Nullable.from_opt(theme)
       },
@@ -2383,8 +2493,8 @@ module ListItemText = {
 };
 
 module ListSubHeader = {
-  [@bs.module "react-toolbox/lib/list"] external reactClass : ReasonReact.reactClass =
-    "ListSubHeader";
+  [@bs.module "react-toolbox/lib/list"]
+  external reactClass : ReasonReact.reactClass = "ListSubHeader";
   let make =
       (
         ~caption: option(string)=?,
@@ -2467,7 +2577,8 @@ module Menu = {
       | BottomLeft => "bottomLeft"
       | BottomRight => "bottomRight";
   };
-  [@bs.module "react-toolbox/lib/menu"] external reactClass : ReasonReact.reactClass = "Menu";
+  [@bs.module "react-toolbox/lib/menu"]
+  external reactClass : ReasonReact.reactClass = "Menu";
   let make =
       (
         ~active: option(bool)=?,
@@ -2509,7 +2620,8 @@ module Menu = {
     ReasonReact.wrapJsForReason(
       ~reactClass,
       ~props={
-        "active": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, active)),
+        "active":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, active)),
         "className": Js.Nullable.from_opt(className),
         "onClick": Js.Nullable.from_opt(onClick),
         "onContextMenu": Js.Nullable.from_opt(onContextMenu),
@@ -2536,10 +2648,14 @@ module Menu = {
         "onTouchEnd": Js.Nullable.from_opt(onTouchEnd),
         "onTouchMove": Js.Nullable.from_opt(onTouchMove),
         "onTouchStart": Js.Nullable.from_opt(onTouchStart),
-        "outline": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, outline)),
-        "position": Js.Nullable.from_opt(optionMap(Position.to_string, position)),
-        "ripple": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, ripple)),
-        "selectable": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, selectable)),
+        "outline":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, outline)),
+        "position":
+          Js.Nullable.from_opt(optionMap(Position.to_string, position)),
+        "ripple":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, ripple)),
+        "selectable":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, selectable)),
         "selected": Js.Nullable.from_opt(selected),
         "style": Js.Nullable.from_opt(style),
         "theme": Js.Nullable.from_opt(theme)
@@ -2549,8 +2665,8 @@ module Menu = {
 };
 
 module MenuDivider = {
-  [@bs.module "react-toolbox/lib/menu"] external reactClass : ReasonReact.reactClass =
-    "MenuDivider";
+  [@bs.module "react-toolbox/lib/menu"]
+  external reactClass : ReasonReact.reactClass = "MenuDivider";
   let make =
       (
         ~className: option(string)=?,
@@ -2614,7 +2730,8 @@ module MenuDivider = {
 };
 
 module MenuItem = {
-  [@bs.module "react-toolbox/lib/menu"] external reactClass : ReasonReact.reactClass = "MenuItem";
+  [@bs.module "react-toolbox/lib/menu"]
+  external reactClass : ReasonReact.reactClass = "MenuItem";
   let make =
       (
         ~caption: string,
@@ -2654,7 +2771,8 @@ module MenuItem = {
       ~props={
         "caption": caption,
         "className": Js.Nullable.from_opt(className),
-        "disabled": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, disabled)),
+        "disabled":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, disabled)),
         "icon": Js.Nullable.from_opt(icon),
         "onClick": Js.Nullable.from_opt(onClick),
         "onContextMenu": Js.Nullable.from_opt(onContextMenu),
@@ -2678,7 +2796,8 @@ module MenuItem = {
         "onTouchEnd": Js.Nullable.from_opt(onTouchEnd),
         "onTouchMove": Js.Nullable.from_opt(onTouchMove),
         "onTouchStart": Js.Nullable.from_opt(onTouchStart),
-        "selected": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, selected)),
+        "selected":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, selected)),
         "shortcut": Js.Nullable.from_opt(shortcut),
         "style": Js.Nullable.from_opt(style),
         "theme": Js.Nullable.from_opt(theme)
@@ -2718,8 +2837,8 @@ module NavDrawer = {
       | Left => "left"
       | Right => "right";
   };
-  [@bs.module "react-toolbox/lib/layout"] external reactClass : ReasonReact.reactClass =
-    "NavDrawer";
+  [@bs.module "react-toolbox/lib/layout"]
+  external reactClass : ReasonReact.reactClass = "NavDrawer";
   let make =
       (
         ~active: option(bool)=?,
@@ -2760,10 +2879,13 @@ module NavDrawer = {
     ReasonReact.wrapJsForReason(
       ~reactClass,
       ~props={
-        "active": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, active)),
+        "active":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, active)),
         "className": Js.Nullable.from_opt(className),
-        "clipped": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, clipped)),
-        "insideTree": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, insideTree)),
+        "clipped":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, clipped)),
+        "insideTree":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, insideTree)),
         "onClick": Js.Nullable.from_opt(onClick),
         "onContextMenu": Js.Nullable.from_opt(onContextMenu),
         "onDoubleClick": Js.Nullable.from_opt(onDoubleClick),
@@ -2787,12 +2909,17 @@ module NavDrawer = {
         "onTouchEnd": Js.Nullable.from_opt(onTouchEnd),
         "onTouchMove": Js.Nullable.from_opt(onTouchMove),
         "onTouchStart": Js.Nullable.from_opt(onTouchStart),
-        "permanentAt": Js.Nullable.from_opt(optionMap(PermanentAt.to_string, permanentAt)),
-        "pinned": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, pinned)),
+        "permanentAt":
+          Js.Nullable.from_opt(optionMap(PermanentAt.to_string, permanentAt)),
+        "pinned":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, pinned)),
         "style": Js.Nullable.from_opt(style),
         "theme": Js.Nullable.from_opt(theme),
         "type": Js.Nullable.from_opt(optionMap(Type.to_string, _type)),
-        "withOverlay": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, withOverlay))
+        "withOverlay":
+          Js.Nullable.from_opt(
+            optionMap(Js.Boolean.to_js_boolean, withOverlay)
+          )
       },
       children
     );
@@ -2808,8 +2935,8 @@ module Navigation = {
       | Vertical => "vertical"
       | Horizontal => "horizontal";
   };
-  [@bs.module "react-toolbox/lib/navigation"] external reactClass : ReasonReact.reactClass =
-    "Navigation";
+  [@bs.module "react-toolbox/lib/navigation"]
+  external reactClass : ReasonReact.reactClass = "Navigation";
   let make =
       (
         ~actions: option(array('a))=?,
@@ -2879,8 +3006,8 @@ module Navigation = {
 };
 
 module Overlay = {
-  [@bs.module "react-toolbox/lib/overlay"] external reactClass : ReasonReact.reactClass =
-    "Overlay";
+  [@bs.module "react-toolbox/lib/overlay"]
+  external reactClass : ReasonReact.reactClass = "Overlay";
   let make =
       (
         ~active: option(bool)=?,
@@ -2894,9 +3021,11 @@ module Overlay = {
     ReasonReact.wrapJsForReason(
       ~reactClass,
       ~props={
-        "active": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, active)),
+        "active":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, active)),
         "className": Js.Nullable.from_opt(className),
-        "invisible": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, invisible)),
+        "invisible":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, invisible)),
         "onClick": Js.Nullable.from_opt(onClick),
         "onEscKeyDown": Js.Nullable.from_opt(onEscKeyDown),
         "theme": Js.Nullable.from_opt(theme)
@@ -2906,7 +3035,8 @@ module Overlay = {
 };
 
 module Panel = {
-  [@bs.module "react-toolbox/lib/layout"] external reactClass : ReasonReact.reactClass = "Panel";
+  [@bs.module "react-toolbox/lib/layout"]
+  external reactClass : ReasonReact.reactClass = "Panel";
   let make =
       (
         ~bodyScroll: option(bool)=?,
@@ -2940,7 +3070,8 @@ module Panel = {
     ReasonReact.wrapJsForReason(
       ~reactClass,
       ~props={
-        "bodyScroll": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, bodyScroll)),
+        "bodyScroll":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, bodyScroll)),
         "className": Js.Nullable.from_opt(className),
         "onClick": Js.Nullable.from_opt(onClick),
         "onContextMenu": Js.Nullable.from_opt(onContextMenu),
@@ -2972,8 +3103,8 @@ module Panel = {
 };
 
 module Portal = {
-  [@bs.module "react-toolbox/lib/hoc/Portal"] external reactClass : ReasonReact.reactClass =
-    "default";
+  [@bs.module "react-toolbox/lib/hoc/Portal"]
+  external reactClass : ReasonReact.reactClass = "default";
   let make =
       (
         ~className: option(string)=?,
@@ -3009,7 +3140,8 @@ module Portal = {
       ~props={
         "className": Js.Nullable.from_opt(className),
         "container": Js.Nullable.from_opt(container),
-        "lockBody": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, lockBody)),
+        "lockBody":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, lockBody)),
         "onClick": Js.Nullable.from_opt(onClick),
         "onContextMenu": Js.Nullable.from_opt(onContextMenu),
         "onDoubleClick": Js.Nullable.from_opt(onDoubleClick),
@@ -3057,8 +3189,8 @@ module ProgressBar = {
       | Linear => "linear"
       | Circular => "circular";
   };
-  [@bs.module "react-toolbox/lib/progress_bar"] external reactClass : ReasonReact.reactClass =
-    "ProgressBar";
+  [@bs.module "react-toolbox/lib/progress_bar"]
+  external reactClass : ReasonReact.reactClass = "ProgressBar";
   let make =
       (
         ~buffer: option(float)=?,
@@ -3101,11 +3233,13 @@ module ProgressBar = {
       ~props={
         "buffer": Js.Nullable.from_opt(buffer),
         "className": Js.Nullable.from_opt(className),
-        "disabled": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, disabled)),
+        "disabled":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, disabled)),
         "max": Js.Nullable.from_opt(max),
         "min": Js.Nullable.from_opt(min),
         "mode": Js.Nullable.from_opt(optionMap(Mode.to_string, mode)),
-        "multicolor": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, multicolor)),
+        "multicolor":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, multicolor)),
         "onClick": Js.Nullable.from_opt(onClick),
         "onContextMenu": Js.Nullable.from_opt(onContextMenu),
         "onDoubleClick": Js.Nullable.from_opt(onDoubleClick),
@@ -3138,8 +3272,8 @@ module ProgressBar = {
 };
 
 module RadioButton = {
-  [@bs.module "react-toolbox/lib/radio"] external reactClass : ReasonReact.reactClass =
-    "RadioButton";
+  [@bs.module "react-toolbox/lib/radio"]
+  external reactClass : ReasonReact.reactClass = "RadioButton";
   let make =
       (
         ~checked: option(bool)=?,
@@ -3180,9 +3314,11 @@ module RadioButton = {
     ReasonReact.wrapJsForReason(
       ~reactClass,
       ~props={
-        "checked": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, checked)),
+        "checked":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, checked)),
         "className": Js.Nullable.from_opt(className),
-        "disabled": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, disabled)),
+        "disabled":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, disabled)),
         "label": Js.Nullable.from_opt(label),
         "name": Js.Nullable.from_opt(name),
         "onBlur": Js.Nullable.from_opt(onBlur),
@@ -3219,8 +3355,8 @@ module RadioButton = {
 };
 
 module RadioGroup = {
-  [@bs.module "react-toolbox/lib/radio/RadioGroup"] external reactClass : ReasonReact.reactClass =
-    "default";
+  [@bs.module "react-toolbox/lib/radio/RadioGroup"]
+  external reactClass : ReasonReact.reactClass = "default";
   let make =
       (
         ~className: option(string)=?,
@@ -3257,7 +3393,8 @@ module RadioGroup = {
       ~reactClass,
       ~props={
         "className": Js.Nullable.from_opt(className),
-        "disabled": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, disabled)),
+        "disabled":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, disabled)),
         "name": Js.Nullable.from_opt(name),
         "onChange": Js.Nullable.from_opt(onChange),
         "onClick": Js.Nullable.from_opt(onClick),
@@ -3320,7 +3457,8 @@ module Sidebar = {
       | Left => "left"
       | Right => "right";
   };
-  [@bs.module "react-toolbox/lib/layout"] external reactClass : ReasonReact.reactClass = "Sidebar";
+  [@bs.module "react-toolbox/lib/layout"]
+  external reactClass : ReasonReact.reactClass = "Sidebar";
   let make =
       (
         ~active: option(bool)=?,
@@ -3362,10 +3500,13 @@ module Sidebar = {
     ReasonReact.wrapJsForReason(
       ~reactClass,
       ~props={
-        "active": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, active)),
+        "active":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, active)),
         "className": Js.Nullable.from_opt(className),
-        "clipped": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, clipped)),
-        "insideTree": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, insideTree)),
+        "clipped":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, clipped)),
+        "insideTree":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, insideTree)),
         "onClick": Js.Nullable.from_opt(onClick),
         "onContextMenu": Js.Nullable.from_opt(onContextMenu),
         "onDoubleClick": Js.Nullable.from_opt(onDoubleClick),
@@ -3389,20 +3530,26 @@ module Sidebar = {
         "onTouchEnd": Js.Nullable.from_opt(onTouchEnd),
         "onTouchMove": Js.Nullable.from_opt(onTouchMove),
         "onTouchStart": Js.Nullable.from_opt(onTouchStart),
-        "permanentAt": Js.Nullable.from_opt(optionMap(PermanentAt.to_string, permanentAt)),
-        "pinned": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, pinned)),
+        "permanentAt":
+          Js.Nullable.from_opt(optionMap(PermanentAt.to_string, permanentAt)),
+        "pinned":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, pinned)),
         "style": Js.Nullable.from_opt(style),
         "theme": Js.Nullable.from_opt(theme),
         "type": Js.Nullable.from_opt(optionMap(Type.to_string, _type)),
         "width": Js.Nullable.from_opt(width),
-        "withOverlay": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, withOverlay))
+        "withOverlay":
+          Js.Nullable.from_opt(
+            optionMap(Js.Boolean.to_js_boolean, withOverlay)
+          )
       },
       children
     );
 };
 
 module Slider = {
-  [@bs.module "react-toolbox/lib/slider"] external reactClass : ReasonReact.reactClass = "Slider";
+  [@bs.module "react-toolbox/lib/slider"]
+  external reactClass : ReasonReact.reactClass = "Slider";
   let make =
       (
         ~buffer: option(float)=?,
@@ -3411,7 +3558,7 @@ module Slider = {
         ~editable: option(bool)=?,
         ~max: option(float)=?,
         ~min: option(float)=?,
-        ~onChange: option(((float, ReactEventRe.Focus.t) => unit))=?,
+        ~onChange: option((float, ReactEventRe.Focus.t) => unit)=?,
         ~onClick: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
         ~onContextMenu: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
         ~onDoubleClick: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
@@ -3448,8 +3595,10 @@ module Slider = {
       ~props={
         "buffer": Js.Nullable.from_opt(buffer),
         "className": Js.Nullable.from_opt(className),
-        "disabled": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, disabled)),
-        "editable": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, editable)),
+        "disabled":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, disabled)),
+        "editable":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, editable)),
         "max": Js.Nullable.from_opt(max),
         "min": Js.Nullable.from_opt(min),
         "onChange": Js.Nullable.from_opt(onChange),
@@ -3476,8 +3625,10 @@ module Slider = {
         "onTouchEnd": Js.Nullable.from_opt(onTouchEnd),
         "onTouchMove": Js.Nullable.from_opt(onTouchMove),
         "onTouchStart": Js.Nullable.from_opt(onTouchStart),
-        "pinned": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, pinned)),
-        "snaps": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, snaps)),
+        "pinned":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, pinned)),
+        "snaps":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, snaps)),
         "step": Js.Nullable.from_opt(step),
         "style": Js.Nullable.from_opt(style),
         "theme": Js.Nullable.from_opt(theme),
@@ -3499,8 +3650,8 @@ module Snackbar = {
       | Cancel => "cancel"
       | Warning => "warning";
   };
-  [@bs.module "react-toolbox/lib/snackbar"] external reactClass : ReasonReact.reactClass =
-    "Snackbar";
+  [@bs.module "react-toolbox/lib/snackbar"]
+  external reactClass : ReasonReact.reactClass = "Snackbar";
   let make =
       (
         ~action: option(string)=?,
@@ -3540,7 +3691,8 @@ module Snackbar = {
       ~reactClass,
       ~props={
         "action": Js.Nullable.from_opt(action),
-        "active": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, active)),
+        "active":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, active)),
         "className": Js.Nullable.from_opt(className),
         "label": Js.Nullable.from_opt(label),
         "onClick": Js.Nullable.from_opt(onClick),
@@ -3576,7 +3728,8 @@ module Snackbar = {
 };
 
 module Switch = {
-  [@bs.module "react-toolbox/lib/switch"] external reactClass : ReasonReact.reactClass = "Switch";
+  [@bs.module "react-toolbox/lib/switch"]
+  external reactClass : ReasonReact.reactClass = "Switch";
   let make =
       (
         ~checked: option(bool)=?,
@@ -3585,7 +3738,7 @@ module Switch = {
         ~label: option(string)=?,
         ~name: option(string)=?,
         ~onBlur: option(ReasonReact.Callback.t(ReactEventRe.Focus.t))=?,
-        ~onChange: option(((Js.boolean, ReactEventRe.Mouse.t) => unit))=?,
+        ~onChange: option((Js.boolean, ReactEventRe.Mouse.t) => unit)=?,
         ~onClick: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
         ~onContextMenu: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
         ~onDoubleClick: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
@@ -3616,9 +3769,11 @@ module Switch = {
     ReasonReact.wrapJsForReason(
       ~reactClass,
       ~props={
-        "checked": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, checked)),
+        "checked":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, checked)),
         "className": Js.Nullable.from_opt(className),
-        "disabled": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, disabled)),
+        "disabled":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, disabled)),
         "label": Js.Nullable.from_opt(label),
         "name": Js.Nullable.from_opt(name),
         "onBlur": Js.Nullable.from_opt(onBlur),
@@ -3654,7 +3809,8 @@ module Switch = {
 };
 
 module Tab = {
-  [@bs.module "react-toolbox/lib/tabs"] external reactClass : ReasonReact.reactClass = "Tab";
+  [@bs.module "react-toolbox/lib/tabs"]
+  external reactClass : ReasonReact.reactClass = "Tab";
   let make =
       (
         ~active: option(bool)=?,
@@ -3665,7 +3821,7 @@ module Tab = {
         ~icon: option(ReasonReact.reactElement)=?,
         ~label: string,
         ~onActive: option(ReasonReact.Callback.t(unit))=?,
-        ~onClick: option(((ReactEventRe.Mouse.t, float) => unit))=?,
+        ~onClick: option((ReactEventRe.Mouse.t, float) => unit)=?,
         ~onContextMenu: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
         ~onDoubleClick: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
         ~onDrag: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
@@ -3694,11 +3850,14 @@ module Tab = {
     ReasonReact.wrapJsForReason(
       ~reactClass,
       ~props={
-        "active": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, active)),
+        "active":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, active)),
         "activeClassName": Js.Nullable.from_opt(activeClassName),
         "className": Js.Nullable.from_opt(className),
-        "disabled": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, disabled)),
-        "hidden": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, hidden)),
+        "disabled":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, disabled)),
+        "hidden":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, hidden)),
         "icon": Js.Nullable.from_opt(icon),
         "label": label,
         "onActive": Js.Nullable.from_opt(onActive),
@@ -3732,8 +3891,8 @@ module Tab = {
 };
 
 module TabContent = {
-  [@bs.module "react-toolbox/lib/tabs"] external reactClass : ReasonReact.reactClass =
-    "TabContent";
+  [@bs.module "react-toolbox/lib/tabs"]
+  external reactClass : ReasonReact.reactClass = "TabContent";
   let make =
       (
         ~active: option(bool)=?,
@@ -3768,7 +3927,8 @@ module TabContent = {
     ReasonReact.wrapJsForReason(
       ~reactClass,
       ~props={
-        "active": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, active)),
+        "active":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, active)),
         "className": Js.Nullable.from_opt(className),
         "onClick": Js.Nullable.from_opt(onClick),
         "onContextMenu": Js.Nullable.from_opt(onContextMenu),
@@ -3801,7 +3961,8 @@ module TabContent = {
 };
 
 module Table = {
-  [@bs.module "react-toolbox/lib/table"] external reactClass : ReasonReact.reactClass = "Table";
+  [@bs.module "react-toolbox/lib/table"]
+  external reactClass : ReasonReact.reactClass = "Table";
   let make =
       (
         ~className: option(string)=?,
@@ -3839,7 +4000,9 @@ module Table = {
       ~props={
         "className": Js.Nullable.from_opt(className),
         "multiSelectable":
-          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, multiSelectable)),
+          Js.Nullable.from_opt(
+            optionMap(Js.Boolean.to_js_boolean, multiSelectable)
+          ),
         "onClick": Js.Nullable.from_opt(onClick),
         "onContextMenu": Js.Nullable.from_opt(onContextMenu),
         "onDoubleClick": Js.Nullable.from_opt(onDoubleClick),
@@ -3863,7 +4026,8 @@ module Table = {
         "onTouchEnd": Js.Nullable.from_opt(onTouchEnd),
         "onTouchMove": Js.Nullable.from_opt(onTouchMove),
         "onTouchStart": Js.Nullable.from_opt(onTouchStart),
-        "selectable": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, selectable)),
+        "selectable":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, selectable)),
         "style": Js.Nullable.from_opt(style),
         "theme": Js.Nullable.from_opt(theme)
       },
@@ -3890,14 +4054,14 @@ module TableCell = {
       | Td => "td"
       | Th => "th";
   };
-  [@bs.module "react-toolbox/lib/table"] external reactClass : ReasonReact.reactClass =
-    "TableCell";
+  [@bs.module "react-toolbox/lib/table"]
+  external reactClass : ReasonReact.reactClass = "TableCell";
   let make =
       (
         ~className: option(string)=?,
         ~column: option(float)=?,
         ~numeric: option(bool)=?,
-        ~onClick: option(((ReactEventRe.Mouse.t, float, float) => unit))=?,
+        ~onClick: option((ReactEventRe.Mouse.t, float, float) => unit)=?,
         ~onContextMenu: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
         ~onDoubleClick: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
         ~onDrag: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
@@ -3931,7 +4095,8 @@ module TableCell = {
       ~props={
         "className": Js.Nullable.from_opt(className),
         "column": Js.Nullable.from_opt(column),
-        "numeric": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, numeric)),
+        "numeric":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, numeric)),
         "onClick": Js.Nullable.from_opt(onClick),
         "onContextMenu": Js.Nullable.from_opt(onContextMenu),
         "onDoubleClick": Js.Nullable.from_opt(onDoubleClick),
@@ -3965,8 +4130,8 @@ module TableCell = {
 };
 
 module TableHead = {
-  [@bs.module "react-toolbox/lib/table"] external reactClass : ReasonReact.reactClass =
-    "TableHead";
+  [@bs.module "react-toolbox/lib/table"]
+  external reactClass : ReasonReact.reactClass = "TableHead";
   let make =
       (
         ~className: option(string)=?,
@@ -3990,7 +4155,7 @@ module TableHead = {
         ~onMouseOut: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
         ~onMouseOver: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
         ~onMouseUp: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
-        ~onSelect: option(((Js.boolean, ReactEventRe.Mouse.t) => unit))=?,
+        ~onSelect: option((Js.boolean, ReactEventRe.Mouse.t) => unit)=?,
         ~onTouchCancel: option(ReasonReact.Callback.t(ReactEventRe.Touch.t))=?,
         ~onTouchEnd: option(ReasonReact.Callback.t(ReactEventRe.Touch.t))=?,
         ~onTouchMove: option(ReasonReact.Callback.t(ReactEventRe.Touch.t))=?,
@@ -4005,9 +4170,14 @@ module TableHead = {
       ~reactClass,
       ~props={
         "className": Js.Nullable.from_opt(className),
-        "displaySelect": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, displaySelect)),
+        "displaySelect":
+          Js.Nullable.from_opt(
+            optionMap(Js.Boolean.to_js_boolean, displaySelect)
+          ),
         "multiSelectable":
-          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, multiSelectable)),
+          Js.Nullable.from_opt(
+            optionMap(Js.Boolean.to_js_boolean, multiSelectable)
+          ),
         "onClick": Js.Nullable.from_opt(onClick),
         "onContextMenu": Js.Nullable.from_opt(onContextMenu),
         "onDoubleClick": Js.Nullable.from_opt(onDoubleClick),
@@ -4031,8 +4201,10 @@ module TableHead = {
         "onTouchEnd": Js.Nullable.from_opt(onTouchEnd),
         "onTouchMove": Js.Nullable.from_opt(onTouchMove),
         "onTouchStart": Js.Nullable.from_opt(onTouchStart),
-        "selectable": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, selectable)),
-        "selected": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, selected)),
+        "selectable":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, selectable)),
+        "selected":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, selected)),
         "style": Js.Nullable.from_opt(style),
         "theme": Js.Nullable.from_opt(theme)
       },
@@ -4041,7 +4213,8 @@ module TableHead = {
 };
 
 module TableRow = {
-  [@bs.module "react-toolbox/lib/table"] external reactClass : ReasonReact.reactClass = "TableRow";
+  [@bs.module "react-toolbox/lib/table"]
+  external reactClass : ReasonReact.reactClass = "TableRow";
   let make =
       (
         ~className: option(string)=?,
@@ -4064,7 +4237,7 @@ module TableRow = {
         ~onMouseOut: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
         ~onMouseOver: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
         ~onMouseUp: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
-        ~onSelect: option(((float, Js.boolean) => unit))=?,
+        ~onSelect: option((float, Js.boolean) => unit)=?,
         ~onTouchCancel: option(ReasonReact.Callback.t(ReactEventRe.Touch.t))=?,
         ~onTouchEnd: option(ReasonReact.Callback.t(ReactEventRe.Touch.t))=?,
         ~onTouchMove: option(ReasonReact.Callback.t(ReactEventRe.Touch.t))=?,
@@ -4103,8 +4276,10 @@ module TableRow = {
         "onTouchEnd": Js.Nullable.from_opt(onTouchEnd),
         "onTouchMove": Js.Nullable.from_opt(onTouchMove),
         "onTouchStart": Js.Nullable.from_opt(onTouchStart),
-        "selectable": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, selectable)),
-        "selected": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, selected)),
+        "selectable":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, selectable)),
+        "selected":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, selected)),
         "style": Js.Nullable.from_opt(style),
         "theme": Js.Nullable.from_opt(theme)
       },
@@ -4122,7 +4297,8 @@ module Tabs = {
       | Display => "display"
       | Unmounted => "unmounted";
   };
-  [@bs.module "react-toolbox/lib/tabs"] external reactClass : ReasonReact.reactClass = "Tabs";
+  [@bs.module "react-toolbox/lib/tabs"]
+  external reactClass : ReasonReact.reactClass = "Tabs";
   let make =
       (
         ~className: option(string)=?,
@@ -4163,11 +4339,16 @@ module Tabs = {
       ~props={
         "className": Js.Nullable.from_opt(className),
         "disableAnimatedBottomBorder":
-          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, disableAnimatedBottomBorder)),
-        "fixed": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, fixed)),
-        "hideMode": Js.Nullable.from_opt(optionMap(HideMode.to_string, hideMode)),
+          Js.Nullable.from_opt(
+            optionMap(Js.Boolean.to_js_boolean, disableAnimatedBottomBorder)
+          ),
+        "fixed":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, fixed)),
+        "hideMode":
+          Js.Nullable.from_opt(optionMap(HideMode.to_string, hideMode)),
         "index": Js.Nullable.from_opt(index),
-        "inverse": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, inverse)),
+        "inverse":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, inverse)),
         "onChange": Js.Nullable.from_opt(onChange),
         "onClick": Js.Nullable.from_opt(onClick),
         "onContextMenu": Js.Nullable.from_opt(onContextMenu),
@@ -4208,8 +4389,8 @@ module TimePicker = {
       | V_24hr => "24hr"
       | Ampm => "ampm";
   };
-  [@bs.module "react-toolbox/lib/time_picker"] external reactClass : ReasonReact.reactClass =
-    "TimePicker";
+  [@bs.module "react-toolbox/lib/time_picker"]
+  external reactClass : ReasonReact.reactClass = "TimePicker";
   let make =
       (
         ~active: option(bool)=?,
@@ -4220,7 +4401,7 @@ module TimePicker = {
         ~inputClassName: option(string)=?,
         ~label: option(string)=?,
         ~okLabel: option(string)=?,
-        ~onChange: option(((Js.Date.t, ReactEventRe.Mouse.t) => unit))=?,
+        ~onChange: option((Js.Date.t, ReactEventRe.Mouse.t) => unit)=?,
         ~onClick: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
         ~onDismiss: option(ReasonReact.Callback.t(ReactEventRe.Mouse.t))=?,
         ~onEscKeyDown: option(ReasonReact.Callback.t(ReactEventRe.Keyboard.t))=?,
@@ -4234,7 +4415,8 @@ module TimePicker = {
     ReasonReact.wrapJsForReason(
       ~reactClass,
       ~props={
-        "active": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, active)),
+        "active":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, active)),
         "cancelLabel": Js.Nullable.from_opt(cancelLabel),
         "error": Js.Nullable.from_opt(error),
         "format": Js.Nullable.from_opt(optionMap(Format.to_string, format)),
@@ -4248,7 +4430,8 @@ module TimePicker = {
         "onEscKeyDown": Js.Nullable.from_opt(onEscKeyDown),
         "onKeyPress": Js.Nullable.from_opt(onKeyPress),
         "onOverlayClick": Js.Nullable.from_opt(onOverlayClick),
-        "readonly": Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, readonly)),
+        "readonly":
+          Js.Nullable.from_opt(optionMap(Js.Boolean.to_js_boolean, readonly)),
         "theme": Js.Nullable.from_opt(theme),
         "value": Js.Nullable.from_opt(value)
       },
