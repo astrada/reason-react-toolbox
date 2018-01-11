@@ -1,5 +1,5 @@
 {
-  "name": "reason-react-toolbox",
+  "name": "@astrada/reason-react-toolbox",
   "sources": [
     "src"
   ],
