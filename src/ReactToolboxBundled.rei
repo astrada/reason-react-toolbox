@@ -57,7 +57,7 @@ module AppBar: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -184,7 +184,7 @@ module Autocomplete: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -239,7 +239,7 @@ module Avatar: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -314,7 +314,7 @@ module BrowseButton: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -389,7 +389,7 @@ module Button: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -438,7 +438,7 @@ module Card: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -485,7 +485,7 @@ module CardActions: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -546,7 +546,7 @@ module CardMedia: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -593,7 +593,7 @@ module CardText: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -646,7 +646,7 @@ module CardTitle: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -675,7 +675,7 @@ module Checkbox: {
       ~label: ReasonReact.reactElement=?,
       ~name: string=?,
       ~onBlur: ReasonReact.Callback.t(ReactEventRe.Focus.t)=?,
-      ~onChange: (Js.boolean, ReactEventRe.Mouse.t) => unit=?,
+      ~onChange: (bool, ReactEventRe.Mouse.t) => unit=?,
       ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
       ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
       ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
@@ -705,7 +705,7 @@ module Checkbox: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -756,7 +756,7 @@ module Chip: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -876,7 +876,7 @@ module DatePicker: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -948,7 +948,7 @@ module Dialog: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -1011,7 +1011,7 @@ module Drawer: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -1084,7 +1084,7 @@ module Dropdown: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -1131,7 +1131,7 @@ module FontIcon: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -1196,7 +1196,7 @@ module IconButton: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -1271,7 +1271,7 @@ module IconMenu: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -1356,7 +1356,7 @@ module Input: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -1403,7 +1403,7 @@ module Layout: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -1460,7 +1460,7 @@ module Link: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -1511,7 +1511,7 @@ module List: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -1574,7 +1574,7 @@ module ListCheckbox: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -1623,7 +1623,7 @@ module ListDivider: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -1637,7 +1637,7 @@ module ListItemAction: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -1657,7 +1657,7 @@ module ListItemActions: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -1686,7 +1686,7 @@ module ListItemContent: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -1755,7 +1755,7 @@ module ListItemLayout: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -1804,7 +1804,7 @@ module ListItemText: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -1853,7 +1853,7 @@ module ListSubHeader: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -1928,7 +1928,7 @@ module Menu: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -1975,7 +1975,7 @@ module MenuDivider: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -2032,7 +2032,7 @@ module MenuItem: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -2113,7 +2113,7 @@ module NavDrawer: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -2172,7 +2172,7 @@ module Navigation: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -2198,7 +2198,7 @@ module Overlay: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -2247,7 +2247,7 @@ module Panel: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -2294,7 +2294,7 @@ module Portal: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -2369,7 +2369,7 @@ module ProgressBar: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -2432,7 +2432,7 @@ module RadioButton: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -2485,7 +2485,7 @@ module RadioGroup: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -2568,7 +2568,7 @@ module Sidebar: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -2638,7 +2638,7 @@ module Slider: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -2704,7 +2704,7 @@ module Snackbar: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -2734,7 +2734,7 @@ module Switch: {
       ~label: string=?,
       ~name: string=?,
       ~onBlur: ReasonReact.Callback.t(ReactEventRe.Focus.t)=?,
-      ~onChange: (Js.boolean, ReactEventRe.Mouse.t) => unit=?,
+      ~onChange: (bool, ReactEventRe.Mouse.t) => unit=?,
       ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
       ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
       ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
@@ -2765,7 +2765,7 @@ module Switch: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -2826,7 +2826,7 @@ module Tab: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -2877,7 +2877,7 @@ module TabContent: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -2930,7 +2930,7 @@ module Table: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -2999,7 +2999,7 @@ module TableCell: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -3042,7 +3042,7 @@ module TableHead: {
       ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
       ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
       ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onSelect: (Js.boolean, ReactEventRe.Mouse.t) => unit=?,
+      ~onSelect: (bool, ReactEventRe.Mouse.t) => unit=?,
       ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
       ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
       ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
@@ -3056,7 +3056,7 @@ module TableHead: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -3097,7 +3097,7 @@ module TableRow: {
       ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
       ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
       ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onSelect: (float, Js.boolean) => unit=?,
+      ~onSelect: (float, bool) => unit=?,
       ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
       ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
       ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
@@ -3111,7 +3111,7 @@ module TableRow: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -3178,7 +3178,7 @@ module Tabs: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
 
@@ -3232,6 +3232,6 @@ module TimePicker: {
     ReasonReact.component(
       ReasonReact.stateless,
       ReasonReact.noRetainedProps,
-      ReasonReact.actionless
+      ReasonReact.actionless,
     );
 };
