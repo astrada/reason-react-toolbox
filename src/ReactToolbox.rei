@@ -8,13 +8,11 @@ module ThemeProvider: {
       ReasonReact.actionless,
     );
 };
-
 module AppBar: {
-
   /*** Component AppBar
        @param className Set a class for the root component.
        @param fixed Determine if the bar should have position fixed or relative.
-       @param flat If true, the AppBar shows a shadow.
+       @param flat If true, the AppBar doesn't show a shadow.
        @param leftIcon If it exists it is used as the AppBar left icon
        @param onClick Callback called when the component is clicked.
        @param onLeftIconClick Called when the left icon is clicked
@@ -34,30 +32,30 @@ module AppBar: {
       ~fixed: bool=?,
       ~flat: bool=?,
       ~leftIcon: ReasonReact.reactElement=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onLeftIconClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onRightIconClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onLeftIconClick: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onRightIconClick: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~rightIcon: ReasonReact.reactElement=?,
       ~scrollHide: bool=?,
       ~style: ReactDOMRe.style=?,
@@ -71,7 +69,6 @@ module AppBar: {
       ReasonReact.actionless,
     );
 };
-
 module Autocomplete: {
   module Direction: {
     type t =
@@ -95,7 +92,6 @@ module Autocomplete: {
       | Word;
     let to_string: t => string;
   };
-
   /*** Component Autocomplete
        @param allowCreate Determines if user can create a new option with the current typed value.
        @param className Set a class for the root component.
@@ -117,7 +113,7 @@ module Autocomplete: {
        @param onFocus Callback function that is fired when component is focused.
        @param onKeyDown Callback function that is fired when a key is pressed down.
        @param onKeyPress Callback function that is fired when a key is pressed.
-       @param onKeyUp Callback function that is fired when a key is released.
+       @param onKeyUp Callback function that is fired when a key is lifted up.
        @param onMouseDown Callback called when the mouse press the Component.
        @param onMouseEnter Callback called when the mouse enters the Component.
        @param onMouseLeave Callback called when the mouse leaves the Component.
@@ -152,33 +148,33 @@ module Autocomplete: {
       ~name: string=?,
       ~onBlur: (ReactEventRe.Focus.t, string) => unit=?,
       ~onChange: ('value, ReactEventRe.Mouse.t) => unit=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onFocus: ReasonReact.Callback.t(ReactEventRe.Focus.t)=?,
-      ~onKeyDown: ReasonReact.Callback.t(ReactEventRe.Keyboard.t)=?,
-      ~onKeyPress: ReasonReact.Callback.t(ReactEventRe.Keyboard.t)=?,
-      ~onKeyUp: ReasonReact.Callback.t(ReactEventRe.Keyboard.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onQueryChange: ReasonReact.Callback.t(string)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onFocus: ReactEventRe.Focus.t => unit=?,
+      ~onKeyDown: ReactEventRe.Keyboard.t => unit=?,
+      ~onKeyPress: ReactEventRe.Keyboard.t => unit=?,
+      ~onKeyUp: ReactEventRe.Keyboard.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onQueryChange: string => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~required: bool=?,
       ~rows: float=?,
       ~selectedPosition: SelectedPosition.t=?,
@@ -198,9 +194,7 @@ module Autocomplete: {
       ReasonReact.actionless,
     );
 };
-
 module Avatar: {
-
   /*** Component Avatar
        @param className Set a class for the root component.
        @param cover Set to true if your image is not squared so it will be used as a cover for the element.
@@ -220,28 +214,28 @@ module Avatar: {
       ~cover: bool=?,
       ~icon: ReasonReact.reactElement=?,
       ~image: ReasonReact.reactElement=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
       ~title: string=?,
@@ -253,9 +247,7 @@ module Avatar: {
       ReasonReact.actionless,
     );
 };
-
 module BrowseButton: {
-
   /*** Component BrowseButton
        @param accent Indicates if the button should have accent color.
        @param className Set a class for the root component.
@@ -292,28 +284,29 @@ module BrowseButton: {
       ~label: string=?,
       ~mini: bool=?,
       ~neutral: bool=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onChange: ReactEventRe.Form.t => unit=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~primary: bool=?,
       ~raised: bool=?,
       ~ripple: bool=?,
@@ -328,9 +321,7 @@ module BrowseButton: {
       ReasonReact.actionless,
     );
 };
-
 module Button: {
-
   /*** Component Button
        @param accent Indicates if the button should have accent color.
        @param className Set a class for the root component.
@@ -348,10 +339,13 @@ module Button: {
        @param onMouseEnter Callback called when the mouse enters the Component.
        @param onMouseLeave Fires after the mouse leaves the Component.
        @param onMouseUp Fires after the mouse is released from the Component.
+       @param onRippleEnded Function that will be called when the ripple animation ends.
        @param primary Indicates if the button should have primary color.
        @param raised If true, the button will have a raised look.
        @param ripple If true, component will have a ripple effect on click.
+       @param spread Factor to indicate how much should the ripple spread under the component.
        @param style Set inline style for the root component.
+       @param target Passed down to the root element
        @param theme Classnames object defining the component style.
        @param type Component root container type. */
   let make:
@@ -367,32 +361,35 @@ module Button: {
       ~label: string=?,
       ~mini: bool=?,
       ~neutral: bool=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onRippleEnded: ReactEventRe.Transition.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~primary: bool=?,
       ~raised: bool=?,
       ~ripple: bool=?,
+      ~spread: float=?,
       ~style: ReactDOMRe.style=?,
+      ~target: string=?,
       ~theme: Js.t({..})=?,
       ~_type: string=?,
       'children
@@ -403,9 +400,7 @@ module Button: {
       ReasonReact.actionless,
     );
 };
-
 module Card: {
-
   /*** Component Card
        @param className Set a class for the root component.
        @param onClick Callback called when the component is clicked.
@@ -419,28 +414,28 @@ module Card: {
   let make:
     (
       ~className: string=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~raised: bool=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
@@ -452,9 +447,7 @@ module Card: {
       ReasonReact.actionless,
     );
 };
-
 module CardActions: {
-
   /*** Component CardActions
        @param className Set a class for the root component.
        @param onClick Callback called when the component is clicked.
@@ -467,28 +460,28 @@ module CardActions: {
   let make:
     (
       ~className: string=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
       'children
@@ -499,7 +492,6 @@ module CardActions: {
       ReasonReact.actionless,
     );
 };
-
 module CardMedia: {
   module AspectRatio: {
     type t =
@@ -507,7 +499,6 @@ module CardMedia: {
       | Square;
     let to_string: t => string;
   };
-
   /*** Component CardMedia
        @param aspectRatio Forces a 16:9 or 1:1 aspect ratio respectively. Unset, the media area will have a flexible height.
        @param className Set a class for the root component.
@@ -528,28 +519,28 @@ module CardMedia: {
       ~color: string=?,
       ~contentOverlay: bool=?,
       ~image: ReasonReact.reactElement=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
       'children
@@ -560,9 +551,7 @@ module CardMedia: {
       ReasonReact.actionless,
     );
 };
-
 module CardText: {
-
   /*** Component CardText
        @param className Set a class for the root component.
        @param onClick Callback called when the component is clicked.
@@ -575,28 +564,28 @@ module CardText: {
   let make:
     (
       ~className: string=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
       'children
@@ -607,9 +596,7 @@ module CardText: {
       ReasonReact.actionless,
     );
 };
-
 module CardTitle: {
-
   /*** Component CardTitle
        @param avatar A string URL or Element to specify an avatar in the left side of the title.
        @param className Set a class for the root component.
@@ -626,28 +613,28 @@ module CardTitle: {
     (
       ~avatar: ReasonReact.reactElement=?,
       ~className: string=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~style: ReactDOMRe.style=?,
       ~subtitle: ReasonReact.reactElement=?,
       ~theme: Js.t({..})=?,
@@ -660,9 +647,7 @@ module CardTitle: {
       ReasonReact.actionless,
     );
 };
-
 module Checkbox: {
-
   /*** Component Checkbox
        @param checked Value for the checkbox, can be true or false.
        @param className Set a class for the root component.
@@ -685,30 +670,30 @@ module Checkbox: {
       ~disabled: bool=?,
       ~label: ReasonReact.reactElement=?,
       ~name: string=?,
-      ~onBlur: ReasonReact.Callback.t(ReactEventRe.Focus.t)=?,
+      ~onBlur: ReactEventRe.Focus.t => unit=?,
       ~onChange: (bool, ReactEventRe.Mouse.t) => unit=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
       'children
@@ -719,9 +704,7 @@ module Checkbox: {
       ReasonReact.actionless,
     );
 };
-
 module Chip: {
-
   /*** Component Chip
        @param className Set a class for the root component.
        @param deletable If true, the chip will be rendered with a delete icon.
@@ -737,29 +720,29 @@ module Chip: {
     (
       ~className: string=?,
       ~deletable: bool=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDeleteClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDeleteClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
       'children
@@ -770,7 +753,6 @@ module Chip: {
       ReasonReact.actionless,
     );
 };
-
 module DatePicker: {
   module Locale: {
     type t =
@@ -799,7 +781,6 @@ module DatePicker: {
       | Zh_tw;
     let to_string: t => string;
   };
-
   /*** Component DatePicker
        @param active Allows to control if the picker should be shown from outside. Beware you should update the prop when the Dialog is closed.
        @param autoOk Automatically selects a date upon clicking on a day
@@ -828,6 +809,7 @@ module DatePicker: {
        @param onMouseUp Fires after the mouse is released from the Component.
        @param onOverlayClick Callback to be invoked when the dialog overlay is clicked.
        @param readonly The input element will be readonly and look like disabled.
+       @param required Used in case the input is required.
        @param style Set inline style for the root component.
        @param sundayFirstDayOfWeek Set week's first day to Sunday. Default week's first day is Monday.
        @param theme Classnames object defining the component style.
@@ -851,33 +833,34 @@ module DatePicker: {
       ~name: string=?,
       ~okLabel: string=?,
       ~onChange: (Js.Date.t, ReactEventRe.Mouse.t) => unit=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDismiss: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onEscKeyDown: ReasonReact.Callback.t(ReactEventRe.Keyboard.t)=?,
-      ~onKeyPress: ReasonReact.Callback.t(ReactEventRe.Keyboard.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onOverlayClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDismiss: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onEscKeyDown: ReactEventRe.Keyboard.t => unit=?,
+      ~onKeyPress: ReactEventRe.Keyboard.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onOverlayClick: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~readonly: bool=?,
+      ~required: bool=?,
       ~style: ReactDOMRe.style=?,
       ~sundayFirstDayOfWeek: bool=?,
       ~theme: Js.t({..})=?,
@@ -890,7 +873,6 @@ module DatePicker: {
       ReasonReact.actionless,
     );
 };
-
 module Dialog: {
   module Type: {
     type t =
@@ -899,7 +881,6 @@ module Dialog: {
       | Large;
     let to_string: t => string;
   };
-
   /*** Component Dialog
        @param actions A array of objects representing the buttons for the dialog navigation area. The properties will be transferred to the buttons.
        @param active If true, the dialog will be active.
@@ -923,33 +904,33 @@ module Dialog: {
       ~actions: array(Js.t({..}))=?,
       ~active: bool=?,
       ~className: string=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onEscKeyDown: ReasonReact.Callback.t(ReactEventRe.Keyboard.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onOverlayClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onOverlayMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onOverlayMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onOverlayMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onEscKeyDown: ReactEventRe.Keyboard.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onOverlayClick: ReactEventRe.Mouse.t => unit=?,
+      ~onOverlayMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onOverlayMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onOverlayMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
       ~title: string=?,
@@ -962,7 +943,6 @@ module Dialog: {
       ReasonReact.actionless,
     );
 };
-
 module Drawer: {
   module Type: {
     type t =
@@ -970,7 +950,6 @@ module Drawer: {
       | Right;
     let to_string: t => string;
   };
-
   /*** Component Drawer
        @param active If true, the drawer will be visible.
        @param className Set a class for the root component.
@@ -990,29 +969,29 @@ module Drawer: {
       ~active: bool=?,
       ~className: string=?,
       ~insideTree: bool=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onOverlayClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onOverlayClick: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
       ~_type: Type.t=?,
@@ -1025,9 +1004,7 @@ module Drawer: {
       ReasonReact.actionless,
     );
 };
-
 module Dropdown: {
-
   /*** Component Dropdown
        @param allowBlank If true the dropdown will preselect the first item if the supplied value matches none of the options' values.
        @param auto If true, the dropdown will open up or down depending on the position in the screen.
@@ -1035,6 +1012,7 @@ module Dropdown: {
        @param disabled Set the component as disabled.
        @param error Give an error string to display under the field.
        @param label The text string to use for the floating label element.
+       @param labelKey Used for setting the label from source
        @param name Name for the input field.
        @param onBlur Callback function that is fired when the component is blurred.
        @param onChange Callback function that is fired when the component's value changes.
@@ -1049,7 +1027,8 @@ module Dropdown: {
        @param style Set inline style for the root component.
        @param template Callback function that returns a JSX template to represent the element.
        @param theme Classnames object defining the component style.
-       @param value Default value using JSON data. */
+       @param value Default value using JSON data.
+       @param valueKey Used for setting the value from source */
   let make:
     (
       ~allowBlank: bool=?,
@@ -1058,38 +1037,40 @@ module Dropdown: {
       ~disabled: bool=?,
       ~error: string=?,
       ~label: string=?,
+      ~labelKey: string=?,
       ~name: string=?,
-      ~onBlur: ReasonReact.Callback.t(ReactEventRe.Focus.t)=?,
+      ~onBlur: ReactEventRe.Focus.t => unit=?,
       ~onChange: ('value, ReactEventRe.Mouse.t) => unit=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onFocus: ReasonReact.Callback.t(ReactEventRe.Focus.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onFocus: ReactEventRe.Focus.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~required: bool=?,
       ~source: array('a),
       ~style: ReactDOMRe.style=?,
       ~template: Js.t({..})=?,
       ~theme: Js.t({..})=?,
       ~value: [ | `String(string) | `Float(float)]=?,
+      ~valueKey: string=?,
       'children
     ) =>
     ReasonReact.component(
@@ -1098,9 +1079,7 @@ module Dropdown: {
       ReasonReact.actionless,
     );
 };
-
 module FontIcon: {
-
   /*** Component FontIcon
        @param className Set a class for the root component.
        @param onClick Callback called when the component is clicked.
@@ -1113,28 +1092,28 @@ module FontIcon: {
   let make:
     (
       ~className: string=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~style: ReactDOMRe.style=?,
       ~value: ReasonReact.reactElement=?,
       'children
@@ -1145,9 +1124,7 @@ module FontIcon: {
       ReasonReact.actionless,
     );
 };
-
 module IconButton: {
-
   /*** Component IconButton
        @param accent Indicates if the button should have accent color.
        @param className Set a class for the root component.
@@ -1175,28 +1152,28 @@ module IconButton: {
       ~icon: ReasonReact.reactElement=?,
       ~inverse: bool=?,
       ~neutral: bool=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~primary: bool=?,
       ~ripple: bool=?,
       ~style: ReactDOMRe.style=?,
@@ -1210,7 +1187,6 @@ module IconButton: {
       ReasonReact.actionless,
     );
 };
-
 module IconMenu: {
   module Position: {
     type t =
@@ -1222,11 +1198,12 @@ module IconMenu: {
       | BottomRight;
     let to_string: t => string;
   };
-
   /*** Component IconMenu
+       @param active If true, the inner Menu component will be active.
        @param className Set a class for the root component.
        @param icon Icon font key string or Element to display the opener icon.
        @param iconRipple If true, the icon will show a ripple when is clicked.
+       @param inverse If true, the neutral colors are inverted. Useful if the icon is over a dark background.
        @param menuRipple Transferred to the Menu component.
        @param onClick Callback called when the component is clicked.
        @param onHide Callback that will be called when the menu is being hidden.
@@ -1243,35 +1220,37 @@ module IconMenu: {
        @param theme Classnames object defining the component style. */
   let make:
     (
+      ~active: bool=?,
       ~className: string=?,
       ~icon: ReasonReact.reactElement=?,
       ~iconRipple: bool=?,
+      ~inverse: bool=?,
       ~menuRipple: bool=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onHide: ReasonReact.Callback.t(unit)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onSelect: ReasonReact.Callback.t(ReactEventRe.Selection.t)=?,
-      ~onShow: ReasonReact.Callback.t(unit)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onHide: unit => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onSelect: ReactEventRe.Selection.t => unit=?,
+      ~onShow: unit => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~position: Position.t=?,
       ~selectable: bool=?,
       ~selected: 'a=?,
@@ -1285,9 +1264,7 @@ module IconMenu: {
       ReasonReact.actionless,
     );
 };
-
 module Input: {
-
   /*** Component Input
        @param className Set a class for the root component.
        @param disabled If true, component will be disabled.
@@ -1328,34 +1305,34 @@ module Input: {
       ~maxLength: float=?,
       ~multiline: bool=?,
       ~name: string=?,
-      ~onBlur: ReasonReact.Callback.t(ReactEventRe.Focus.t)=?,
+      ~onBlur: ReactEventRe.Focus.t => unit=?,
       ~onChange: (string, ReactEventRe.Mouse.t) => unit=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onFocus: ReasonReact.Callback.t(ReactEventRe.Focus.t)=?,
-      ~onKeyDown: ReasonReact.Callback.t(ReactEventRe.Keyboard.t)=?,
-      ~onKeyPress: ReasonReact.Callback.t(ReactEventRe.Keyboard.t)=?,
-      ~onKeyUp: ReasonReact.Callback.t(ReactEventRe.Keyboard.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onFocus: ReactEventRe.Focus.t => unit=?,
+      ~onKeyDown: ReactEventRe.Keyboard.t => unit=?,
+      ~onKeyPress: ReactEventRe.Keyboard.t => unit=?,
+      ~onKeyUp: ReactEventRe.Keyboard.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~required: bool=?,
       ~rows: float=?,
       ~style: ReactDOMRe.style=?,
@@ -1370,9 +1347,7 @@ module Input: {
       ReasonReact.actionless,
     );
 };
-
 module Layout: {
-
   /*** Component Layout
        @param className Set a class for the root component.
        @param onClick Callback called when the component is clicked.
@@ -1385,28 +1360,28 @@ module Layout: {
   let make:
     (
       ~className: string=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
       'children
@@ -1417,9 +1392,7 @@ module Layout: {
       ReasonReact.actionless,
     );
 };
-
 module Link: {
-
   /*** Component Link
        @param active If true, adds active style to link.
        @param className Set a class for the root component.
@@ -1442,28 +1415,28 @@ module Link: {
       ~href: string=?,
       ~icon: ReasonReact.reactElement=?,
       ~label: string=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
       'children
@@ -1474,9 +1447,7 @@ module Link: {
       ReasonReact.actionless,
     );
 };
-
 module List: {
-
   /*** Component List
        @param className Set a class for the root component.
        @param onClick Callback called when the component is clicked.
@@ -1491,28 +1462,28 @@ module List: {
   let make:
     (
       ~className: string=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~ripple: bool=?,
       ~selectable: bool=?,
       ~style: ReactDOMRe.style=?,
@@ -1525,9 +1496,7 @@ module List: {
       ReasonReact.actionless,
     );
 };
-
 module ListCheckbox: {
-
   /*** Component ListCheckbox
        @param caption Main text of the item. Required.
        @param checked If true the checkbox appears checked by default.
@@ -1553,31 +1522,31 @@ module ListCheckbox: {
       ~disabled: bool=?,
       ~legend: string=?,
       ~name: string=?,
-      ~onBlur: ReasonReact.Callback.t(ReactEventRe.Focus.t)=?,
-      ~onChange: ReasonReact.Callback.t(ReactEventRe.Form.t)=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onFocus: ReasonReact.Callback.t(ReactEventRe.Focus.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onBlur: ReactEventRe.Focus.t => unit=?,
+      ~onChange: ReactEventRe.Form.t => unit=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onFocus: ReactEventRe.Focus.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
       'children
@@ -1588,9 +1557,7 @@ module ListCheckbox: {
       ReasonReact.actionless,
     );
 };
-
 module ListDivider: {
-
   /*** Component ListDivider
        @param className Set a class for the root component.
        @param inset If true, will leave a space at the left side.
@@ -1605,28 +1572,28 @@ module ListDivider: {
     (
       ~className: string=?,
       ~inset: bool=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
       'children
@@ -1637,9 +1604,7 @@ module ListDivider: {
       ReasonReact.actionless,
     );
 };
-
 module ListItemAction: {
-
   /*** Component ListItemAction
        @param action List item action.
        @param theme Object defining the component class name mappings. */
@@ -1651,7 +1616,6 @@ module ListItemAction: {
       ReasonReact.actionless,
     );
 };
-
 module ListItemActions: {
   module Type: {
     type t =
@@ -1659,7 +1623,6 @@ module ListItemActions: {
       | Right;
     let to_string: t => string;
   };
-
   /*** Component ListItemActions
        @param theme Object defining the component class name mappings.
        @param type List item action type. */
@@ -1671,7 +1634,6 @@ module ListItemActions: {
       ReasonReact.actionless,
     );
 };
-
 module ListItemContent: {
   module Type: {
     type t =
@@ -1680,7 +1642,6 @@ module ListItemContent: {
       | Large;
     let to_string: t => string;
   };
-
   /*** Component ListItemContent
        @param caption Main text of the item.
        @param legend Secondary text to display under the caption.
@@ -1700,9 +1661,7 @@ module ListItemContent: {
       ReasonReact.actionless,
     );
 };
-
 module ListItemLayout: {
-
   /*** Component ListItemLayout
        @param avatar A string URL to specify an avatar in the left side of the item.
        @param caption Main text of the item.
@@ -1733,28 +1692,28 @@ module ListItemLayout: {
       ~leftActions: array(ReasonReact.reactElement)=?,
       ~leftIcon: [ | `String(string) | `Element(ReasonReact.reactElement)]=?,
       ~legend: string=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~rightActions: array(ReasonReact.reactElement)=?,
       ~rightIcon: [ | `String(string) | `Element(ReasonReact.reactElement)]=?,
       ~selectable: bool=?,
@@ -1769,9 +1728,7 @@ module ListItemLayout: {
       ReasonReact.actionless,
     );
 };
-
 module ListItemText: {
-
   /*** Component ListItemText
        @param className Set a class for the root component.
        @param onClick Callback called when the component is clicked.
@@ -1785,28 +1742,28 @@ module ListItemText: {
   let make:
     (
       ~className: string=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~primary: bool=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
@@ -1818,9 +1775,7 @@ module ListItemText: {
       ReasonReact.actionless,
     );
 };
-
 module ListSubHeader: {
-
   /*** Component ListSubHeader
        @param caption Text that will be displayed.
        @param className Set a class for the root component.
@@ -1835,28 +1790,28 @@ module ListSubHeader: {
     (
       ~caption: string=?,
       ~className: string=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
       'children
@@ -1867,7 +1822,6 @@ module ListSubHeader: {
       ReasonReact.actionless,
     );
 };
-
 module Menu: {
   module Position: {
     type t =
@@ -1879,7 +1833,6 @@ module Menu: {
       | BottomRight;
     let to_string: t => string;
   };
-
   /*** Component Menu
        @param active If true, the menu will be displayed as opened by default.
        @param className Set a class for the root component.
@@ -1902,31 +1855,31 @@ module Menu: {
     (
       ~active: bool=?,
       ~className: string=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onHide: ReasonReact.Callback.t(unit)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onSelect: ReasonReact.Callback.t('value)=?,
-      ~onShow: ReasonReact.Callback.t(unit)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onHide: unit => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onSelect: 'value => unit=?,
+      ~onShow: unit => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~outline: bool=?,
       ~position: Position.t=?,
       ~ripple: bool=?,
@@ -1942,9 +1895,7 @@ module Menu: {
       ReasonReact.actionless,
     );
 };
-
 module MenuDivider: {
-
   /*** Component MenuDivider
        @param className Set a class for the root component.
        @param onClick Callback called when the component is clicked.
@@ -1957,28 +1908,28 @@ module MenuDivider: {
   let make:
     (
       ~className: string=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
       'children
@@ -1989,9 +1940,7 @@ module MenuDivider: {
       ReasonReact.actionless,
     );
 };
-
 module MenuItem: {
-
   /*** Component MenuItem
        @param caption The text to include in the menu item. Required.
        @param className Set a class for the root component.
@@ -2005,39 +1954,41 @@ module MenuItem: {
        @param selected Transferred from the Menu component for selectable menus. Indicates if it's the current active option.
        @param shortcut Displays shortcut text on the right side of the caption attribute.
        @param style Set inline style for the root component.
-       @param theme Classnames object defining the component style. */
+       @param theme Classnames object defining the component style.
+       @param value Passed down to the root element */
   let make:
     (
       ~caption: string,
       ~className: string=?,
       ~disabled: bool=?,
       ~icon: ReasonReact.reactElement=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~selected: bool=?,
       ~shortcut: string=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
+      ~value: 'a=?,
       'children
     ) =>
     ReasonReact.component(
@@ -2046,7 +1997,6 @@ module MenuItem: {
       ReasonReact.actionless,
     );
 };
-
 module NavDrawer: {
   module PermanentAt: {
     type t =
@@ -2066,56 +2016,24 @@ module NavDrawer: {
       | Right;
     let to_string: t => string;
   };
-
   /*** Component NavDrawer
        @param active If true, the drawer will be shown as an overlay.
-       @param className Set a class for the root component.
        @param clipped If true, when the `AppBar` gets pinned, it will stand over the `Drawer`.
        @param insideTree If true the Drawer is rendered inside the normal tree.
-       @param onClick Callback called when the component is clicked.
-       @param onMouseDown Callback called when the mouse press the Component.
-       @param onMouseEnter Callback called when the mouse enters the Component.
-       @param onMouseLeave Callback called when the mouse leaves the Component.
-       @param onMouseUp Fires after the mouse is released from the Component.
        @param onOverlayClick Callback function to be invoked when the overlay is clicked. It only works if the `Drawer` is actually displaying and Overlay
        @param permanentAt The breakpoint at which the drawer is automatically pinned.
        @param pinned If true, the drawer will be pinned open. pinned takes precedence over active.
-       @param style Set inline style for the root component.
        @param theme Classnames object defining the component style.
        @param type Type of drawer. It can be left or right to display the drawer on the left or right side of the screen.
        @param withOverlay If true display an Overlay that locks the scroll when the Drawer is active. */
   let make:
     (
       ~active: bool=?,
-      ~className: string=?,
       ~clipped: bool=?,
       ~insideTree: bool=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onOverlayClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onOverlayClick: ReactEventRe.Mouse.t => unit=?,
       ~permanentAt: PermanentAt.t=?,
       ~pinned: bool=?,
-      ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
       ~_type: Type.t=?,
       ~withOverlay: bool=?,
@@ -2127,7 +2045,6 @@ module NavDrawer: {
       ReasonReact.actionless,
     );
 };
-
 module Navigation: {
   module Type: {
     type t =
@@ -2135,7 +2052,6 @@ module Navigation: {
       | Horizontal;
     let to_string: t => string;
   };
-
   /*** Component Navigation
        @param actions Array of objects that will be represented as <Button/> so the keys will be transferred as properties the Button Component.
        @param className Set a class for the root component.
@@ -2152,28 +2068,28 @@ module Navigation: {
     (
       ~actions: array('a)=?,
       ~className: string=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~routes: array('b)=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
@@ -2186,9 +2102,7 @@ module Navigation: {
       ReasonReact.actionless,
     );
 };
-
 module Overlay: {
-
   /*** Component Overlay
        @param active Whether overlay is active.
        @param className Additional class name(s) for root container.
@@ -2201,8 +2115,8 @@ module Overlay: {
       ~active: bool=?,
       ~className: string=?,
       ~invisible: bool=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onEscKeyDown: ReasonReact.Callback.t(ReactEventRe.Keyboard.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onEscKeyDown: ReactEventRe.Keyboard.t => unit=?,
       ~theme: Js.t({..})=?,
       'children
     ) =>
@@ -2212,9 +2126,7 @@ module Overlay: {
       ReasonReact.actionless,
     );
 };
-
 module Panel: {
-
   /*** Component Panel
        @param bodyScroll You can set it to true in case you are using a pinned Sidebar so it takes an scrolled `div` instead of using the document scroll.
        @param className Set a class for the root component.
@@ -2229,28 +2141,28 @@ module Panel: {
     (
       ~bodyScroll: bool=?,
       ~className: string=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
       'children
@@ -2261,9 +2173,7 @@ module Panel: {
       ReasonReact.actionless,
     );
 };
-
 module Portal: {
-
   /*** Component Portal
        @param className Set a class for the root component.
        @param onClick Callback called when the component is clicked.
@@ -2277,28 +2187,28 @@ module Portal: {
       ~className: string=?,
       ~container: 'a=?,
       ~lockBody: bool=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~style: ReactDOMRe.style=?,
       'children
     ) =>
@@ -2308,7 +2218,6 @@ module Portal: {
       ReasonReact.actionless,
     );
 };
-
 module ProgressBar: {
   module Mode: {
     type t =
@@ -2322,7 +2231,6 @@ module ProgressBar: {
       | Circular;
     let to_string: t => string;
   };
-
   /*** Component ProgressBar
        @param buffer Value of a secondary progress bar useful for buffering.
        @param className Set a class for the root component.
@@ -2349,28 +2257,28 @@ module ProgressBar: {
       ~min: float=?,
       ~mode: Mode.t=?,
       ~multicolor: bool=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
       ~_type: Type.t=?,
@@ -2383,9 +2291,7 @@ module ProgressBar: {
       ReasonReact.actionless,
     );
 };
-
 module RadioButton: {
-
   /*** Component RadioButton
        @param checked If true, the input element will be selected by default. Transferred from the parent.
        @param className Set a class for the root component.
@@ -2410,31 +2316,31 @@ module RadioButton: {
       ~disabled: bool=?,
       ~label: ReasonReact.reactElement=?,
       ~name: string=?,
-      ~onBlur: ReasonReact.Callback.t(ReactEventRe.Focus.t)=?,
-      ~onChange: ReasonReact.Callback.t(ReactEventRe.Form.t)=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onFocus: ReasonReact.Callback.t(ReactEventRe.Focus.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onBlur: ReactEventRe.Focus.t => unit=?,
+      ~onChange: ReactEventRe.Form.t => unit=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onFocus: ReactEventRe.Focus.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~style: ReactDOMRe.style=?,
       ~theme: 'a=?,
       ~value: 'b=?,
@@ -2446,9 +2352,7 @@ module RadioButton: {
       ReasonReact.actionless,
     );
 };
-
 module RadioGroup: {
-
   /*** Component RadioGroup
        @param className Set a class for the root component.
        @param disabled If true, the group will be displayed as disabled.
@@ -2466,29 +2370,29 @@ module RadioGroup: {
       ~className: string=?,
       ~disabled: bool=?,
       ~name: string=?,
-      ~onChange: ReasonReact.Callback.t(string)=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onChange: string => unit=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~style: ReactDOMRe.style=?,
       ~value: 'a=?,
       'children
@@ -2499,7 +2403,6 @@ module RadioGroup: {
       ReasonReact.actionless,
     );
 };
-
 module Sidebar: {
   module PermanentAt: {
     type t =
@@ -2519,21 +2422,13 @@ module Sidebar: {
       | Right;
     let to_string: t => string;
   };
-
   /*** Component Sidebar
        @param active If true, the drawer will be visible.
-       @param className Set a class for the root component.
        @param clipped If true, when the `AppBar` gets pinned, it will stand over the `Drawer`.
        @param insideTree If true the Drawer is rendered inside the normal tree.
-       @param onClick Callback called when the component is clicked.
-       @param onMouseDown Callback called when the mouse press the Component.
-       @param onMouseEnter Callback called when the mouse enters the Component.
-       @param onMouseLeave Callback called when the mouse leaves the Component.
-       @param onMouseUp Fires after the mouse is released from the Component.
        @param onOverlayClick Callback function to be invoked when the overlay is clicked.
        @param permanentAt The breakpoint at which the drawer is automatically pinned.
        @param pinned If true, the sidebar will be pinned open.
-       @param style Set inline style for the root component.
        @param theme Classnames object defining the component style.
        @param type Type of drawer. It can be left or right to display the drawer on the left or right side of the screen.
        @param width Width in standard increments (1-12) or percentage (25, 33, 50, 66, 75, 100)
@@ -2541,35 +2436,11 @@ module Sidebar: {
   let make:
     (
       ~active: bool=?,
-      ~className: string=?,
       ~clipped: bool=?,
       ~insideTree: bool=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onOverlayClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onOverlayClick: ReactEventRe.Mouse.t => unit=?,
       ~permanentAt: PermanentAt.t=?,
       ~pinned: bool=?,
-      ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
       ~_type: Type.t=?,
       ~width: float=?,
@@ -2582,9 +2453,7 @@ module Sidebar: {
       ReasonReact.actionless,
     );
 };
-
 module Slider: {
-
   /*** Component Slider
        @param buffer Used to style the ProgressBar element
        @param className Set a class for the root component.
@@ -2615,29 +2484,29 @@ module Slider: {
       ~max: float=?,
       ~min: float=?,
       ~onChange: (float, ReactEventRe.Focus.t) => unit=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStop: ReasonReact.Callback.t(unit)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStop: unit => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~pinned: bool=?,
       ~snaps: bool=?,
       ~step: float=?,
@@ -2652,7 +2521,6 @@ module Slider: {
       ReasonReact.actionless,
     );
 };
-
 module Snackbar: {
   module Type: {
     type t =
@@ -2661,7 +2529,6 @@ module Snackbar: {
       | Warning;
     let to_string: t => string;
   };
-
   /*** Component Snackbar
        @param action Label for the action component inside the Snackbar.
        @param active If true, the snackbar will be active.
@@ -2682,30 +2549,30 @@ module Snackbar: {
       ~action: string=?,
       ~active: bool=?,
       ~className: string=?,
-      ~label: string=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTimeout: ReasonReact.Callback.t(unit)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~label: [ | `String(string) | `Object(Js.t({..}))]=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onTimeout: unit => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
       ~timeout: float=?,
@@ -2718,9 +2585,7 @@ module Snackbar: {
       ReasonReact.actionless,
     );
 };
-
 module Switch: {
-
   /*** Component Switch
        @param checked If true, the switch will be enabled.
        @param className Set a class for the root component.
@@ -2744,31 +2609,31 @@ module Switch: {
       ~disabled: bool=?,
       ~label: string=?,
       ~name: string=?,
-      ~onBlur: ReasonReact.Callback.t(ReactEventRe.Focus.t)=?,
+      ~onBlur: ReactEventRe.Focus.t => unit=?,
       ~onChange: (bool, ReactEventRe.Mouse.t) => unit=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onFocus: ReasonReact.Callback.t(ReactEventRe.Focus.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onFocus: ReactEventRe.Focus.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
       'children
@@ -2779,9 +2644,7 @@ module Switch: {
       ReasonReact.actionless,
     );
 };
-
 module Tab: {
-
   /*** Component Tab
        @param active If true, the current component is visible.
        @param activeClassName Additional class name to provide custom styling for the active tab.
@@ -2789,7 +2652,7 @@ module Tab: {
        @param disabled If true, the current component is not clickable.
        @param hidden If true, the current component is not visible.
        @param icon Icon to be used in inner FontIcon.
-       @param label Label text for navigation header. Required.
+       @param label Label text for navigation header.
        @param onActive Callback function that is fired when the tab is activated.
        @param onClick Callback called when the component is clicked.
        @param onMouseDown Callback called when the mouse press the Component.
@@ -2806,30 +2669,30 @@ module Tab: {
       ~disabled: bool=?,
       ~hidden: bool=?,
       ~icon: ReasonReact.reactElement=?,
-      ~label: string,
-      ~onActive: ReasonReact.Callback.t(unit)=?,
+      ~label: string=?,
+      ~onActive: unit => unit=?,
       ~onClick: (ReactEventRe.Mouse.t, float) => unit=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
       'children
@@ -2840,9 +2703,7 @@ module Tab: {
       ReasonReact.actionless,
     );
 };
-
 module TabContent: {
-
   /*** Component TabContent
        @param active Whether tab is active.
        @param className Set a class for the root component.
@@ -2858,28 +2719,28 @@ module TabContent: {
     (
       ~active: bool=?,
       ~className: string=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~style: ReactDOMRe.style=?,
       ~tabIndex: float=?,
       ~theme: Js.t({..})=?,
@@ -2891,9 +2752,7 @@ module TabContent: {
       ReasonReact.actionless,
     );
 };
-
 module Table: {
-
   /*** Component Table
        @param className Set a class for the root component.
        @param multiSelectable If true, the header and each row will display a checkbox to allow the user to select multiple rows.
@@ -2910,29 +2769,29 @@ module Table: {
     (
       ~className: string=?,
       ~multiSelectable: bool=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onRowSelect: ReasonReact.Callback.t(array(float))=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onRowSelect: array(float => unit)=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~selectable: bool=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
@@ -2944,7 +2803,6 @@ module Table: {
       ReasonReact.actionless,
     );
 };
-
 module TableCell: {
   module Sorted: {
     type t =
@@ -2958,7 +2816,6 @@ module TableCell: {
       | Th;
     let to_string: t => string;
   };
-
   /*** Component TableCell
        @param className Set a class for the root component.
        @param column The column number of this cell.
@@ -2979,27 +2836,27 @@ module TableCell: {
       ~column: float=?,
       ~numeric: bool=?,
       ~onClick: (ReactEventRe.Mouse.t, float, float) => unit=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~row: float=?,
       ~sorted: Sorted.t=?,
       ~style: ReactDOMRe.style=?,
@@ -3013,9 +2870,7 @@ module TableCell: {
       ReasonReact.actionless,
     );
 };
-
 module TableHead: {
-
   /*** Component TableHead
        @param className Set a class for the root component.
        @param displaySelect If true, a checkbox will be displayed to select every row. In case the table is not multi-selectable, it will be disabled though.
@@ -3035,29 +2890,29 @@ module TableHead: {
       ~className: string=?,
       ~displaySelect: bool=?,
       ~multiSelectable: bool=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
       ~onSelect: (bool, ReactEventRe.Mouse.t) => unit=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~selectable: bool=?,
       ~selected: bool=?,
       ~style: ReactDOMRe.style=?,
@@ -3070,9 +2925,7 @@ module TableHead: {
       ReasonReact.actionless,
     );
 };
-
 module TableRow: {
-
   /*** Component TableRow
        @param className Set a class for the root component.
        @param idx The index of the row.
@@ -3090,29 +2943,29 @@ module TableRow: {
     (
       ~className: string=?,
       ~idx: float=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
       ~onSelect: (float, bool) => unit=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~selectable: bool=?,
       ~selected: bool=?,
       ~style: ReactDOMRe.style=?,
@@ -3125,7 +2978,6 @@ module TableRow: {
       ReasonReact.actionless,
     );
 };
-
 module Tabs: {
   module HideMode: {
     type t =
@@ -3133,7 +2985,6 @@ module Tabs: {
       | Unmounted;
     let to_string: t => string;
   };
-
   /*** Component Tabs
        @param className Set a class for the root component.
        @param disableAnimatedBottomBorder Disable the animation below the active tab.
@@ -3159,29 +3010,29 @@ module Tabs: {
       ~hideMode: HideMode.t=?,
       ~index: float=?,
       ~inverse: bool=?,
-      ~onChange: ReasonReact.Callback.t(float)=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onContextMenu: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDoubleClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrag: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnd: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragExit: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDragStart: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDrop: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseDown: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseEnter: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseLeave: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseMove: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOut: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseOver: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onMouseUp: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onTouchCancel: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchEnd: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchMove: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
-      ~onTouchStart: ReasonReact.Callback.t(ReactEventRe.Touch.t)=?,
+      ~onChange: float => unit=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onContextMenu: ReactEventRe.Mouse.t => unit=?,
+      ~onDoubleClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDrag: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnd: ReactEventRe.Mouse.t => unit=?,
+      ~onDragEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onDragExit: ReactEventRe.Mouse.t => unit=?,
+      ~onDragLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onDragOver: ReactEventRe.Mouse.t => unit=?,
+      ~onDragStart: ReactEventRe.Mouse.t => unit=?,
+      ~onDrop: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseDown: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseEnter: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseLeave: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseMove: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOut: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseOver: ReactEventRe.Mouse.t => unit=?,
+      ~onMouseUp: ReactEventRe.Mouse.t => unit=?,
+      ~onTouchCancel: ReactEventRe.Touch.t => unit=?,
+      ~onTouchEnd: ReactEventRe.Touch.t => unit=?,
+      ~onTouchMove: ReactEventRe.Touch.t => unit=?,
+      ~onTouchStart: ReactEventRe.Touch.t => unit=?,
       ~style: ReactDOMRe.style=?,
       ~theme: Js.t({..})=?,
       'children
@@ -3192,7 +3043,6 @@ module Tabs: {
       ReasonReact.actionless,
     );
 };
-
 module TimePicker: {
   module Format: {
     type t =
@@ -3200,7 +3050,6 @@ module TimePicker: {
       | Ampm;
     let to_string: t => string;
   };
-
   /*** Component TimePicker
        @param active Whether time picker is active.
        @param cancelLabel Label used for cancel button.
@@ -3230,11 +3079,11 @@ module TimePicker: {
       ~label: string=?,
       ~okLabel: string=?,
       ~onChange: (Js.Date.t, ReactEventRe.Mouse.t) => unit=?,
-      ~onClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onDismiss: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
-      ~onEscKeyDown: ReasonReact.Callback.t(ReactEventRe.Keyboard.t)=?,
-      ~onKeyPress: ReasonReact.Callback.t(ReactEventRe.Keyboard.t)=?,
-      ~onOverlayClick: ReasonReact.Callback.t(ReactEventRe.Mouse.t)=?,
+      ~onClick: ReactEventRe.Mouse.t => unit=?,
+      ~onDismiss: ReactEventRe.Mouse.t => unit=?,
+      ~onEscKeyDown: ReactEventRe.Keyboard.t => unit=?,
+      ~onKeyPress: ReactEventRe.Keyboard.t => unit=?,
+      ~onOverlayClick: ReactEventRe.Mouse.t => unit=?,
       ~readonly: bool=?,
       ~theme: Js.t({..})=?,
       ~value: Js.Date.t=?,
